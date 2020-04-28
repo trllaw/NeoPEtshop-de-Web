@@ -1,0 +1,43 @@
+body {
+    background-color: #CFCFCF;
+}
+
+.header {
+    background-color: #FFD026;
+    padding: 20px 20px;
+}
+
+.loginBox {
+    height: 70px;
+    width: 200px;
+    float: right;
+    margin-right: 50px;
+}
+
+.loginBox input {
+    width: 100px;
+    height: 12px;
+}
+
+.b-box {
+    background-color: #FFECA8;
+    height: 40px;
+    margin: 5px;
+}
+
+.header-buttons {
+    float: right;
+}
+
+.header-buttons a {
+    float: none;
+    display: inline-block;
+    text-align: center;
+    padding: 12px;
+}
+
+.logo {
+    width: 300px;
+
+}
+
