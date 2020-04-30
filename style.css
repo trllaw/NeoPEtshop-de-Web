@@ -206,10 +206,14 @@ cellphone size
     height: 300px;
     border: 1px;
     display: flex;
+    flex-wrap: wrap;
+    height: auto;
 }
 
 .footer .footer-content .footer-section {
     flex: 1;
     border: 1px;
     padding: 20px;
+    max-width: 100%;
+    width: 25%;
 }
