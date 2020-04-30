@@ -1,7 +1,12 @@
 /*
 --GENERAL--
 */
-h1, h2, h3, h4 ,p{
+
+h1,
+h2,
+h3,
+h4,
+p {
     font-family: sans-serif;
 }
 
@@ -14,19 +19,71 @@ body {
 }
 
 button {
-    border-radius:5px;
-    font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-    padding:8px 20px;
+    border-radius: 5px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 20px 8px 20px;
     background-color: #FFECA8;
 }
+
 button:hover {
-	background-color:#ffeca8ab;
+    background-color: #ffeca8ab;
 }
+
+
 /*
 --HEADER--
 */
+
+
+/*
+cellphone
+*/
+
+@media screen and (max-width: 580px) {
+    .top-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .top-header .search-box {
+        width: 20%;
+        min-width: 190px;
+        max-width: 300px;
+        padding: 0;
+        align-items: center;
+        justify-self: left;
+    }
+    .top-header .search-box button {
+        width: 20%;
+        height: auto;
+    }
+    .top-header .search-box input {
+        min-width: 95px;
+        width: 50%;
+        max-width: 200px;
+        justify-self: center;
+        align-self: center;
+    }
+    .top-header .search-box button {
+        width: 25%;
+        padding: 0;
+        min-width: 75px;
+    }
+    .top-header .loginBox input {
+        width: 70%;
+        min-width: 170px;
+        justify-self: left;
+    }
+    .top-header .loginBox {
+        width: 60%;
+        padding: 0;
+    }
+}
+
 .header {
     background-color: #FFD026;
     padding: 20px 20px;
@@ -36,30 +93,49 @@ button:hover {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
- 
-.top-header .header-section{
+
+.top-header .header-section {
     display: inline;
     border: 1px;
     padding: 20px;
 }
 
-.top-header .search-box input{
-    width: 600px;
+.top-header .search-box input {
     height: 25px;
+    min-width: 95px;
+    width: 80%;
+}
+
+.top-header .search-box {
+    width: 60%;
 }
 
 .top-header .loginBox {
     height: 70px;
-    width: 150px;
+    /*15%*/
+    min-width: 190px;
+    width: 15%;
     float: right;
-    margin-right: 50px;
+    margin: 30px;
     text-align: right;
+    justify-self: auto;
 }
 
 .top-header .loginBox input {
-    width: 100px;
+    width: 80%;
     height: 12px;
+    min-width: 190;
+    justify-self: right;
+}
+
+.top-header .loginBox button {
+    width: 90%;
+    padding: 1%;
+    min-width: 70px;
+    max-width: 120px;
+    margin-right: 35px;
 }
 
 .b-box {
@@ -80,18 +156,21 @@ button:hover {
 }
 
 .header-buttons a:hover {
-    background-color:#b9aa72;
+    background-color: #b9aa72;
 }
 
 .logo {
-    width: 280px;
-
+    width: 30%;
+    min-width: 150px;
+    justify-self: left;
+    max-width: 100%;
 }
 
 
 /*
 --PLACEHOLDER--
 */
+
 .blank {
     background-color: whitesmoke;
     padding: 20px 20px;
@@ -107,7 +186,8 @@ button:hover {
 /*
 --FOOTER--
 */
-.footer{
+
+.footer {
     background-color: #FFD026;
 }
 
