@@ -188,6 +188,20 @@ cellphone size
     padding: 20px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.blank-buttons {
+    display: inline;
+    align-items: right;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    background-color: #FFD026;
+    border: solid #FFECA8 5px;
+    border-radius: 5px;
 }
 
 .blank .user-data ul {
