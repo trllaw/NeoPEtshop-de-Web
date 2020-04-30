@@ -38,7 +38,7 @@ button:hover {
 
 
 /*
-cellphone
+cellphone size
 */
 
 @media screen and (max-width: 580px) {
@@ -140,11 +140,20 @@ cellphone
 
 .b-box {
     background-color: #FFECA8;
-    height: 40px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
 }
 
 .header-buttons {
     float: right;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
 }
 
 .header-buttons a {
@@ -153,6 +162,7 @@ cellphone
     text-align: center;
     padding: 12px;
     border: 25px;
+    width: auto;
 }
 
 .header-buttons a:hover {
@@ -180,6 +190,7 @@ cellphone
 
 .blank img {
     margin: auto;
+    max-width: 100%;
 }
 
 
