@@ -222,23 +222,25 @@ cellphone size
     }
 }
 
-@media screen and (max-width: 440px) {
-    .blank .pet-list .pet-data {
-        width: 350px;
+@media screen and (max-width: 400px) {
+    .blank .item-list .item-data ul {
+        padding: 10px;
+        width: 30%;
+        margin: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
-    .blank .pet-list .pet-data button {
+    .blank .item-list .item-data button{
         width: 70%;
-        height: 60px;
-        padding: 0;
-        justify-self: left;
         font-size: 13px
     }
-    .blank .pet-list .pet-data span {
+    .blank .item-list .item-data span{
         font-size: 13px
     }
 }
 
-.blank .pet-list .pet-data {
+.blank .item-list .item-data {
     display: flex;
     border: solid #FFD026 5px;
     border-radius: 5px;
@@ -247,12 +249,12 @@ cellphone size
     justify-self: center;
 }
 
-.blank .pet-list li {
+.blank .item-list li {
     display: flex;
     flex-wrap: wrap;
 }
 
-.blank .pet-list .pet-data ul {
+.blank .item-list .item-data ul {
     padding: 10px;
     width: 70%;
     margin: 5px 5px 5px 5px;
@@ -261,7 +263,7 @@ cellphone size
     flex-wrap: wrap;
 }
 
-.blank .pet-list .pet-data img {
+.blank .item-list .item-data img {
     width: 45%;
     height: 45%;
     padding: 0;
