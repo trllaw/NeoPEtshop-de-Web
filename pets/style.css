@@ -188,11 +188,43 @@ cellphone size
     padding: 20px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
-.blank .user-data ul {
+.blank .pet-list ul {
     list-style-type: none;
     padding: 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.blank .pet-list .pet-data {
+    display: flex;
+    border: solid #FFD026 5px;
+    border-radius: 5px;
+    width: 100%;
+    justify-self: center;
+}
+
+.blank .pet-list .pet-data ul {
+    padding: 10px;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.blank .pet-list .pet-data img {
+    width: 150px;
+    height: 150px;
+    margin: 5px 5px 5px 5px;
+    border: solid #FFECA8 5px;
+    border-radius: 3%;
 }
 
 
