@@ -191,7 +191,6 @@ cellphone size
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-end;
 }
 
 .blank .pet-list ul {
