@@ -145,7 +145,7 @@ cellphone size
     min-height: 40px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: end;
 }
 
@@ -154,7 +154,7 @@ cellphone size
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: end;
 }
 
@@ -190,9 +190,81 @@ cellphone size
     margin-bottom: 10px;
 }
 
-.blank .user-data ul {
+.blank .item-list ul {
     list-style-type: none;
     padding: 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@media screen and (min-width: 1111px) {
+    .blank .item-list li {
+        display: flex;
+        flex-wrap: wrap;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1110px) and (min-width: 801px) {
+    .blank .item-list li {
+        display: flex;
+        flex-wrap: wrap;
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 600px) {
+    .blank .item-list li {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .blank .item-list .item-data{
+        width:350px;
+    }
+    .blank .item-list .item-data button {
+        width: 70%;
+        font-size: 13px
+    }
+    .blank .item-list .item-data span {
+        font-size: 13px
+    }
+}
+
+.blank .item-list .item-data {
+    display: flex;
+    border: solid #FFD026 5px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    justify-self: center;
+}
+
+.blank .item-list li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blank .item-list .item-data ul {
+    padding: 10px;
+    width: 70%;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.blank .item-list .item-data img {
+    width: 45%;
+    height: 45%;
+    padding: 0;
+    margin: 5px 5px 5px 5px;
+    border: solid #FFECA8 5px;
+    border-radius: 3%;
 }
 
 

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Neo PetShop Meus Dados</title>
+    <title>Neo PetShop Meus Pets</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -43,31 +43,40 @@
         <!--fim cabecalho-->
 
         <div class="blank">
-            <div class="user-data">
+            <h1>Meus Pets</h1>
+            <div class="pet-list">
                 <ul>
-                    <li><b>Nome: </b>
-                        <input type="text" placeholder="Usuario">
+                    <li>
+                        <div class="pet-data">
+                            <img src="../imgs/doggo.jpeg">
+                            <ul>
+                                <li><span><b>Nome:</b>Dogge</span></li>
+                                <li><span><b>Pet:</b>Cachorro</span></li>
+                                <li><span><b>Raça:</b>Shiba</span></li>
+                                <li><span><b>Ultima Vacina:</b>Raiva(20/07/2019)</span></li>
+                                <li><span><b>Ultima Tosa:</b>13/10/2019</span></li>
+                                <li><span><b>Ultimo Banho:</b>27/02/2020</span></li>
+                                <li><button>Ver Mais detalhes</button></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li><b>CPF: </b>
-                        <input type="text" placeholder="123.456.789.01">
+                    <li>
+                        <div class="pet-data">
+                            <img src="../imgs/crycat.jpg">
+                            <ul>
+                                <li><span><b>Nome:</b>Catto</span></li>
+                                <li><span><b>Pet:</b>Gato</span></li>
+                                <li><span><b>Raça:</b>Snowshoe</span></li>
+                                <li><span><b>Ultima Vacina:</b>Raiva(05/02/2020)</span></li>
+                                <li><span><b>Ultima Tosa:</b>23/05/2019</span></li>
+                                <li><span><b>Ultimo Banho:</b>28/04/2020</span></li>
+                                <li><button>Ver Mais detalhes</button></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li><b>Telefone: </b>
-                        <input type="text" placeholder="(11)1111-1111">
-                    </li>
-                    <li><b>Celular: </b>
-                        <input type="text" placeholder="(22)92222-2222">
-                    </li>
-                    <li><b>Endereço: </b>
-                        <input type="text" placeholder="Endereço do Usuario">
-                    </li>
-                    <li><b>Email: </b>
-                        <input type="text" placeholder="user@email.com">
-                    </li>
-                    <li><input type="checkbox">
-                        <span>Receber emails com as ultimas novidades da nossa loja.</span>
-                    </li>
+
                 </ul>
-                <Button>Atualizar Dados</Button>
+                <button>Adicionar novo Pet</button>
             </div>
         </div>
 
