@@ -190,6 +190,19 @@ cellphone size
     margin-bottom: 10px;
 }
 
+.blank .user-data {
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    border: solid #FFD026;
+    padding: 2%;
+}
+
+.blank .user-data img {
+    width: 20%;
+    border-radius: 10px;
+}
+
 .blank .user-data ul {
     list-style-type: none;
     padding: 15px 15px;
