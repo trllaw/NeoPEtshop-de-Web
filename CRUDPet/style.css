@@ -145,7 +145,7 @@ cellphone size
     min-height: 40px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: end;
 }
 
@@ -154,7 +154,7 @@ cellphone size
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: end;
 }
 
@@ -190,22 +190,43 @@ cellphone size
     margin-bottom: 10px;
 }
 
-.blank .user-data {
-    display: flex;
-    flex-direction: row;
-    margin: 2%;
-    border: solid #FFD026;
-    padding: 2%;
-}
-
-.blank .user-data img {
-    width: 20%;
-    border-radius: 10px;
-}
-
 .blank .user-data ul {
     list-style-type: none;
     padding: 15px 15px;
+}
+
+@media screen and (min-width: 440px) {
+    .blank .user-data img {
+        width: 20%;
+        border-radius: 10px;
+        justify-self: center;
+    }
+    .blank .user-data {
+        display: flex;
+        flex-direction: row;
+        margin: 2%;
+        border: solid #FFD026;
+        padding: 2%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .blank .user-data {
+        margin: 2%;
+        border: solid #FFD026;
+        padding: 2%;
+    }
+    .blank .user-data img {
+        width: 120px;
+        border-radius: 5px;
+        justify-self: center;
+    }
+    .blank span {
+        font-size: 12px;
+    }
+    .blank b {
+        font-size: 12px;
+    }
 }
 
 
