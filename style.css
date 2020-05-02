@@ -172,7 +172,6 @@ cellphone size
 }
 
 .logo {
-    width: 30%;
     min-width: 150px;
     justify-self: left;
     max-width: 100%;
@@ -196,6 +195,30 @@ cellphone size
     border: solid rgba(255, 208, 38, 0.363);
     border-radius: 25px;
 }
+
+.box-container {
+    background-color: #FFECA8;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*
+--servPage--
+*/
+.services h1{
+    text-align: center;
+}
+
+.services img{
+    width: max-content;
+    height: 200px;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 
 
 /*
