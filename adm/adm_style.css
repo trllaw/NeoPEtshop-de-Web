@@ -94,6 +94,15 @@
 }
 
 
+/*Os elementos do filtro acima*/
+
+.list span {
+    font-size: small;
+    font-weight: bolder;
+    color: goldenrod;
+}
+
+
 /*Tabela do resultado da consulta, na page 'admIventario' e 'admEntrega*/
 
 .result-container table {
@@ -132,8 +141,3 @@
     background-color: #4CAF50;
     color: white;
 }
-
-
-/**/
-
-.empresa {}

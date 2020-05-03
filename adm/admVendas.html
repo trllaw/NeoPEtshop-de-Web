@@ -43,6 +43,101 @@
 
         <div class="blank">
             <h1>Vendas</h1>
+            <!--Inicio do containter de vendas no mês-->
+            <div class="vendas-container">
+                <h2>Deste mês:</h2>
+                <ul class="list">
+                    <li>
+                        <label for="saldo_inicial"> Saldo inicial:</label> <span>+ 1000,00</span>
+                    </li>
+                    <li>
+                        <label for="saldo_final"> Saldo final:</label> <span>+ 1088,90</span>
+                    </li>
+                    <li>
+                        <label for="saldo_inicial"> Valor arrecadado:</label> <span> 88,90</span>
+                    </li>
+                    <li>
+                        <label for="produto_destaque"> Quantidade de produtos:</label> <span>12</span>
+                    </li>
+                    <li>
+                        <label for="produto_destaque"> Produto destaque:</label> <span>whiskas sachês 85g peixes</span>
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li>
+                        <label for="vendas_vista"> Vendas á vista:</label> <span> 1</span>
+                    </li>
+                    <li>
+                        <label for="cliente_vista"> Cliente destaque :</label> <span>Fulano da Silva</span>
+                    </li>
+                    <li>
+                        <label for="vendas_parc"> Vendas parceladas:</label> <span>1</span>
+                    </li>
+                    <li>
+                        <label for="cliente_parc"> Cliente destaque:</label> <span>Maria Fonseca</span>
+                    </li>
+                </ul>
+                <!--Fim do containter de vendas no mês-->
+            </div>
+            <!--Inicio do containter de filtro de pesquisa-->
+            <div class="search-container">
+                <h2>Filtros:</h2>
+                <ul class="list">
+                    <li>
+                        <label for="clas_ordem"> Ordem cronológica:</label>
+                        <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="text" placeholder=" Digite o Produto Destaque" size="30">
+                    </li>
+                    <li>
+                        <label for="clas_valor arrecadado"> Valor arrecadado:</label>
+                        <select id="marca">
+                            <option value="nenhum" selected >Nenhum</option>
+                            <option value="crescente" >Crescente</option>
+                            <option value="decrescente">Decrescente</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="text" placeholder=" Digite o Cliente Destaque" size="30">
+                    </li>
+                    <button>Pesquisar</button>
+                </ul>
+                <!--Fim do containter de filtro de pesquisa-->
+            </div>
+            <!--Inicio do containter do resultado da pesquisa-->
+            <div class="result-container">
+                <h2>Resultados:</h2>
+                <table>
+                    <tr>
+                        <th>Mês/Ano</th>
+                        <th>Saldo inicial</th>
+                        <th>Valor arrecadado</th>
+                        <th>Quantidade de produtos</th>
+                        <th>Produto destaque</th>
+                        <th>Vendas á vista</th>
+                        <th>Cliente destaque</th>
+                        <th>Vendas parceladas</th>
+                        <th>Cliente destaque</th>
+                    </tr>
+                    <tr>
+                        <td>Fevereiro/2017</td>
+                        <td>+1000,00</td>
+                        <td>R$ 88,90</td>
+                        <td>12</td>
+                        <td>whiskas sachês 85g peixes</td>
+                        <td>1</td>
+                        <td>Fulano da Silva</td>
+                        <td>1</td>
+                        <td>Maria Fonseca</td>
+                    </tr>
+                </table>
+            </div>
+            <!--Fim do containter do resultado da pesquisa-->
         </div>
 
     </div>
