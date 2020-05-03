@@ -42,7 +42,32 @@
         <!--fim cabecalho-->
 
         <div class="blank">
-            <h1>Empresa</h1>
+            <h1>Dados sobre a Empresa</h1>
+            <!--Inicio da div que contem os dados cadastrais da empresa-->
+            <div class="empresa-data">
+                <ul>
+                    <li><b>Endereço: </b>
+                        <input type="text" placeholder="Endereço da loja fisica">
+                    </li>
+                    <li><b>CNPJ: </b>
+                        <input type="text" placeholder="123.456.789-01" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required>
+                    </li>
+                    <li><b>Telefone fixo: </b>
+                        <input type="text" placeholder="(11)1111-1111" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required>
+                    </li>
+                    <li><b>Celular: </b>
+                        <input type="text" placeholder="(22)92222-2222" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required>
+                    </li>
+                    <li><b>Email: </b>
+                        <input type="text" placeholder="user@email.com">
+                    </li>
+                    <li><b>Sobre: </b> <br>
+                        <textarea rows="10" cols="120"></textarea>
+                    </li>
+                </ul>
+                <Button>Atualizar Dados</Button>
+            </div>
+            <!--Inicio da div que contem os dados cadastrais da empresa-->
         </div>
 
     </div>
