@@ -7,7 +7,7 @@
 }
 
 
-/* Next & previous buttons */
+/* Setas de 'Next' e 'previous' no slideshow*/
 
 .prev,
 .next {
@@ -26,7 +26,7 @@
 }
 
 
-/* Position the "next button" to the right */
+/* Posicionando a seta de 'next' para a direita */
 
 .next {
     right: 0;
@@ -42,7 +42,7 @@
 }
 
 
-/* Number text (1/3 etc) */
+/* Numero de fotos no slideshow (1/3 etc) */
 
 .numbertext {
     color: darkblue;
@@ -53,7 +53,7 @@
 }
 
 
-/* Caption text */
+/* Texto da foto no slideshow */
 
 .text {
     background-color: rgba(0, 0, 0, 0.8);
@@ -65,3 +65,181 @@
     width: 100%;
     text-align: center;
 }
+
+.search-container {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #CFCFCF;
+    padding-left: 7px;
+}
+
+.list li {
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.list {
+    padding-left: 0px;
+    padding-right: 7px;
+    font-weight: bold;
+}
+
+.result-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.result-container table td,
+.result-container table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.result-container table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.result-container table tr:hover {
+    background-color: #FFECA8;
+}
+
+.result-container table th {
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/**/
+
+
+/*
+<div class="search-container">
+                <h2>Filtros:</h2>
+                <ul class="list">
+                    <li>
+                        <label for="clas_ordem"> Escolha a Ordem:</label>
+                        <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                            <option value="mais_relevante">Mais Relevante</option>
+                            <option value="menos_relevante" >Menos Relevante</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="clas_preco"> Classificar por preço:</label>
+                        <select id="preco">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="caro" >Mais caro</option>
+                            <option value="barato">Mais barato</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="clas_raca"> Qual Raça:</label>
+                        <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="Cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button>Pesquisar</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-container">
+                <h2>Resultados:</h2>
+            </div>
+
+
+
+.result-container {
+    display: inline-block;
+    border-style: solid;
+    border-color: #FFD026;
+}
+
+.search-container {
+    display: inline-block;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #CFCFCF;
+    padding-left: 7px;
+}
+.list li {
+    display: block;
+    padding-top: 10px;
+}
+
+.list {
+    padding-left: 0px;
+    padding-right: 7px;
+}
+
+
+
+<ul class="list">
+                <h3>Filtros:</h3>
+                <li>
+                    <label for="clas_ordem"> Escolha a Ordem:</label>
+                    <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                            <option value="mais_relevante">Mais Relevante</option>
+                            <option value="menos_relevante" >Menos Relevante</option>
+                        </select>
+                </li>
+                <li>
+                    <label for="clas_preco"> Classificar por preço:</label>
+                    <select id="preco">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="caro" >Mais caro</option>
+                            <option value="barato">Mais barato</option>
+                        </select>
+                </li>
+                <li>
+                    <label for="clas_raca"> Qual Raça:</label>
+                    <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="Cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                </li>
+                <li>
+                    <button>Pesquisar</button>
+                </li>
+            </ul>
+            <ul class="result">
+                <h3>Resultados:</h3>
+                <li>
+                    <label for="clas_ordem"> Escolha a Ordem:</label>
+                    <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                            <option value="mais_relevante">Mais Relevante</option>
+                            <option value="menos_relevante" >Menos Relevante</option>
+                        </select>
+                </li>
+                <li>
+                    <label for="clas_preco"> Classificar por preço:</label>
+                    <select id="preco">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="caro" >Mais caro</option>
+                            <option value="barato">Mais barato</option>
+                        </select>
+                </li>
+                <li>
+                    <label for="clas_raca"> Qual Raça:</label>
+                    <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="Cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                </li>
+
+            </ul>
+
+*/

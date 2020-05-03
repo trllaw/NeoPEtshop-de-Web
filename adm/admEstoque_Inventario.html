@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo PetShop Inventário</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <link href="adm_style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!--Inicio cabecalho-->
+        <div class="header">
+            <div class="top-header">
+                <img src="../imgs/logo.png" class="logo header-section">
+                <div class="search-box header-section">
+                    <input type="text" placeholder="Busque aqui!">
+                    <button>Buscar</button>
+                </div>
+                <div class="loginBox">
+                    <h3>Seja bem vindo(a)</h3>
+                    <p id="name_adm"> Administrador X</p>
+                    <button>Sair</button>
+                </div>
+            </div>
+            <div class="b-box">
+                <div class="header-buttons">
+                    <a>Entregas</a>
+                    <a>Inventário</a>
+                    <a>Produtos</a>
+                    <a>Serviços</a>
+                    <a>Vendas</a>
+                    <a>Empresa</a>
+                </div>
+            </div>
+        </div>
+        <!--fim cabecalho-->
+
+        <div class="blank">
+            <h2>Inventário</h2>
+            <div class="search-container">
+                <h2>Filtros:</h2>
+                <ul class="list">
+                    <li>
+                        <label for="clas_ordem"> Escolha a Ordem:</label>
+                        <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                            <option value="mais_relevante">Mais Relevante</option>
+                            <option value="menos_relevante" >Menos Relevante</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="clas_preco"> Classificar por preço:</label>
+                        <select id="preco">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="caro" >Mais caro</option>
+                            <option value="barato">Mais barato</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="clas_raca"> Qual Raça:</label>
+                        <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="clas_porte"> Qual Porte:</label>
+                        <select id="porte">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="filhote" >Filhote</option>
+                            <option value="pequeno">Pequene</option>
+                            <option value="médio" >Médio</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </li>
+                    <button>Pesquisar</button>
+                </ul>
+
+            </div>
+            <div class="result-container">
+                <h2>Resultados:</h2>
+                <table>
+                    <tr>
+                        <th>Código</th>
+                        <th>Categoria produto</th>
+                        <th>Raça</th>
+                        <th>Porte</th>
+                        <th>Marca</th>
+                        <th>Preço unitário</th>
+                        <th>Quantidade</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <tr>
+                        <td>000000</td>
+                        <td>Brinquedo</td>
+                        <td>Cachoro</td>
+                        <td>Pequeno</td>
+                        <td>Puretoy</td>
+                        <td>R$ 36,00</td>
+                        <td>32</td>
+                        <td>Trata-se de um kit osso para cachorros.</td>
+                    </tr>
+                    <tr>
+                        <td>000001</td>
+                        <td>Sachê 85g peixes</td>
+                        <td>Gato</td>
+                        <td>filhote</td>
+                        <td>Whiskas</td>
+                        <td>R$2,29</td>
+                        <td>120</td>
+                        <td>Trata-se de uma das raçoes mais vendidas para filhotes</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
