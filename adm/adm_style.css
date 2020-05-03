@@ -69,7 +69,8 @@
 
 /*container dos filtos na page 'admIventario' e 'admEntrega'*/
 
-.search-container {
+.search-container,
+.crud-data {
     border-width: 4px;
     border-style: solid;
     border-color: #CFCFCF;
@@ -140,4 +141,15 @@
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+
+.crud-data {
+    background-color: #4CAF50;
+    color: white;
+    display: block;
+}
+
+.crud li {
+    display: inline-block;
+    width: 30%;
 }

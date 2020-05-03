@@ -43,9 +43,40 @@
 
         <div class="blank">
             <h1>Serviços</h1>
-        </div>
+            <!--Inicio da div que contem os dados cadastrais dos produtos-->
+            <div class="crud-data">
+                <h2>Adicionar</h2>
+                <ul class="crud">
+                    <li><b>Serviço a oferecer: </b>
+                        <input type="text">
+                    </li>
 
-    </div>
+                    <li><b>Raça: </b>
+                        <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                            <option value="cachorro_gato">Cachorro e Gato</option>
+                        </select>
+                    </li>
+
+                    <li><b>Preço: </b>
+                        <input type="text" placeholder="Por exemplo, R$ 10,00">
+                    </li>
+                    <li><b>Descrição: </b><br>
+                        <textarea rows="10" cols="120" placeholder="Descreva aqui informações adicionais"></textarea>
+                    </li>
+                    <br>
+                    <Button>Realizar Tarefa</Button>
+                </ul>
+                <!--Fim da div que contem os dados cadastrais dos produtos-->
+            </div>
+            <Button>Adicionar Serviços</Button>
+            <Button>Atualizar Serviços</Button>
+            <Button>Remover Serviços</Button>
+            <Button>Consultar Serviços</Button>
+
+        </div>
 </body>
 
 </html>

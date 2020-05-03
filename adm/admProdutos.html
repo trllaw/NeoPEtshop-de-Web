@@ -43,6 +43,50 @@
 
         <div class="blank">
             <h1>Produtos</h1>
+            <!--Inicio da div que contem os dados cadastrais dos produtos-->
+            <div class="crud-data">
+                <h2>Adicionar</h2>
+                <ul class="crud">
+                    <li><b>Código do produto: </b>
+                        <input type="text">
+                    </li>
+                    <li><b>Categoria produto: </b>
+                        <input type="text">
+                    </li>
+                    <li><b>Marca: </b>
+                        <input type="text" placeholder="Ex: Whiskas">
+                    </li>
+                    <li><b>Raça: </b>
+                        <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </li>
+                    <li><b>Porte: </b>
+                        <select id="porte">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="filhote" >Filhote</option>
+                            <option value="pequeno">Pequene</option>
+                            <option value="médio" >Médio</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </li>
+                    <li><b>Preço unitário: </b>
+                        <input type="text" placeholder="Por exemplo, R$ 10,00">
+                    </li>
+                    <li><b>Descrição: </b><br>
+                        <textarea rows="10" cols="120" placeholder="Descreva aqui informações adicionais"></textarea>
+                    </li>
+                    <br>
+                    <Button>Realizar Tarefa</Button>
+                </ul>
+                <!--Fim da div que contem os dados cadastrais dos produtos-->
+            </div>
+            <Button>Adicionar Produtos</Button>
+            <Button>Atualizar Produtos</Button>
+            <Button>Remover Produtos</Button>
+            <Button>Consultar produtos</Button>
 
         </div>
 
