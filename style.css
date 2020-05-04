@@ -219,7 +219,14 @@ cellphone size
     object-fit: cover;
 }
 
-
+/*
+--aboutPage--
+*/
+.about img {
+    min-width: 5%;
+    max-width: 30%;
+    float: left;
+}
 
 /*
 --FOOTER--
