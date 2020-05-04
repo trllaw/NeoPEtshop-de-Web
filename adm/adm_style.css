@@ -7,7 +7,7 @@
 }
 
 
-/* Next & previous buttons */
+/* Setas de 'Next' e 'previous' no slideshow*/
 
 .prev,
 .next {
@@ -26,7 +26,7 @@
 }
 
 
-/* Position the "next button" to the right */
+/* Posicionando a seta de 'next' para a direita */
 
 .next {
     right: 0;
@@ -42,7 +42,7 @@
 }
 
 
-/* Number text (1/3 etc) */
+/* Numero de fotos no slideshow (1/3 etc) */
 
 .numbertext {
     color: darkblue;
@@ -53,7 +53,7 @@
 }
 
 
-/* Caption text */
+/* Texto da foto no slideshow */
 
 .text {
     background-color: rgba(0, 0, 0, 0.8);
@@ -64,4 +64,92 @@
     position: absolute;
     width: 100%;
     text-align: center;
+}
+
+
+/*container dos filtos na page 'admIventario' e 'admEntrega'*/
+
+.search-container,
+.crud-data {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #CFCFCF;
+    padding-left: 7px;
+}
+
+
+/*Tal Filtro de pesquisa, encontrado nas page acima*/
+
+.list {
+    padding-left: 0px;
+    padding-right: 7px;
+    font-weight: bold;
+}
+
+
+/*Os elementos do filtro acima*/
+
+.list li {
+    display: inline-block;
+    padding-right: 15px;
+}
+
+
+/*Os elementos do filtro acima*/
+
+.list span {
+    font-size: small;
+    font-weight: bolder;
+    color: goldenrod;
+}
+
+
+/*Tabela do resultado da consulta, na page 'admIventario' e 'admEntrega*/
+
+.result-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/*Adicionando bordas aos elementos dessa tabela*/
+
+.result-container table td,
+.result-container table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+/*Para melhor visualização da table, alterna o background por linha*/
+
+.result-container table tr:nth-child(even) {
+    background-color: lightsteelblue;
+}
+
+
+/*Caso o mouse esteja em cima, mude a cor*/
+
+.result-container table tr:hover {
+    background-color: #FFECA8;
+}
+
+
+/*Estilizando o cabeçalho da tabela*/
+
+.result-container table th {
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.crud-data {
+    background-color: #4CAF50;
+    color: white;
+    display: block;
+}
+
+.crud li {
+    display: inline-block;
+    width: 30%;
 }
