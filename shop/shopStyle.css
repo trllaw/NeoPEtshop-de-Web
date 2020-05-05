@@ -1,5 +1,11 @@
+.blank {
+    height: 1600px;
+}
+
 .shop {
     float: inline-start;
+    display: flex;
+    flex-direction: column;
 }
 
 .shop .shopOpt {
@@ -8,9 +14,17 @@
     padding: 10px;
 }
 
-.product-container li.product {
+.shop .box-container {
+    width: 100%;
+}
+
+li {
     list-style-type: none;
-    display: inline-block;
+    display: inline;
+}
+
+.product-container li.product img {
+    width: 10%;
 }
 
 .product-container .product .priceTag {
