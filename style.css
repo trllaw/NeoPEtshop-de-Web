@@ -190,7 +190,7 @@ cellphone size
     margin-bottom: 10px;
 }
 
-.blank img {
+.blank .banner {
     margin: auto;
     max-width: 100%;
     border: solid rgba(255, 208, 38, 0.363);
