@@ -172,7 +172,6 @@ cellphone size
 }
 
 .logo {
-    width: 30%;
     min-width: 150px;
     justify-self: left;
     max-width: 100%;
@@ -188,6 +187,10 @@ cellphone size
     padding: 20px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
 }
 
 .blank .banner {
@@ -197,6 +200,115 @@ cellphone size
     border-radius: 25px;
 }
 
+.box-container {
+    background-color: #FFECA8;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*
+UserPage
+*/
+.blank .user-data ul {
+    list-style-type: none;
+    padding: 15px 15px;
+}
+
+.blank .user-data ul li {
+    display: flex;  
+}
+
+.blank .user-data ul li .textBox{
+    width: 100px;
+}
+
+/*
+--PetPage
+*/
+@media screen and (max-width: 570px) {
+    .blank .pet-list .pet-data button {
+        font-size: 13px;
+        width: 70%;
+    }
+    .blank .pet-list .pet-data span {
+        font-size: 13px;
+        width: 70%;
+    }
+    .blank .pet-list .pet-data {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        border: solid #FFD026 5px;
+        border-radius: 5px;
+        width: 80%;
+    }
+    .blank .pet-list .pet-data img {
+        width: 35%;
+        height: 35%;
+        margin: 5px 5px 5px 5px;
+        border: solid #FFECA8 5px;
+        border-radius: 3%;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .blank .pet-list .pet-data {
+        display: flex;
+        border: solid #FFD026 5px;
+        border-radius: 5px;
+        width: 100%;
+        justify-self: center;
+    }
+    .blank .pet-list .pet-data img {
+        width: 25%;
+        height: 25%;
+        margin: 5px 5px 5px 5px;
+        border: solid #FFECA8 5px;
+        border-radius: 3%;
+    }
+}
+
+.blank .pet-list ul {
+    list-style-type: none;
+    padding: 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.blank .pet-list .pet-data ul {
+    padding: 10px;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/*
+--servPage--
+*/
+.services h1{
+    text-align: center;
+}
+
+.services img{
+    width: max-content;
+    height: 200px;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/*
+--aboutPage--
+*/
+.about img {
+    min-width: 5%;
+    max-width: 30%;
+    float: left;
+}
 
 /*
 --FOOTER--
