@@ -190,6 +190,7 @@ cellphone size
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    height: auto;
 }
 
 .blank img {
@@ -205,6 +206,23 @@ cellphone size
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/*
+UserPage
+*/
+.blank .user-data ul {
+    list-style-type: none;
+    padding: 15px 15px;
+}
+
+.blank .user-data ul li {
+    display: flex;  
+}
+
+.blank .user-data ul li .textBox{
+    width: 100px;
+}
+
 /*
 --PetPage
 */

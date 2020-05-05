@@ -1,0 +1,20 @@
+.shop {
+    float: inline-start;
+}
+
+.shop .shopOpt {
+    width: 200px;
+    margin-right: 20 px;
+    padding: 10px;
+}
+
+
+.product-container li.product{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.product-container .product .priceTag{
+    font-size: larger;
+}
+
