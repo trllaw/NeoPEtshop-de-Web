@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo PetShop - Serviços</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <link href="adm_style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!--Inicio cabecalho-->
+        <div class="header">
+            <div class="top-header">
+                <img src="../imgs/logo.png" class="logo header-section">
+                <div class="search-box header-section">
+                    <input type="text" placeholder="Busque aqui!">
+                    <button>Buscar</button>
+                </div>
+                <div class="loginBox">
+                    <h3>Seja bem vindo(a)</h3>
+                    <p id="name_adm"> Administrador X</p>
+                    <button>Sair</button>
+                </div>
+            </div>
+            <div class="b-box">
+                <div class="header-buttons">
+                    <a>Entregas</a>
+                    <a>Inventário</a>
+                    <a>Produtos</a>
+                    <a>Serviços</a>
+                    <a>Vendas</a>
+                    <a>Empresa</a>
+                </div>
+            </div>
+        </div>
+        <!--fim cabecalho-->
+
+        <div class="blank">
+            <h1>Serviços</h1>
+            <!--Inicio da div que contem os dados cadastrais dos produtos-->
+            <div class="crud-data">
+                <h2>Adicionar</h2>
+                <ul class="crud">
+                    <li><b>Serviço a oferecer: </b>
+                        <input type="text">
+                    </li>
+
+                    <li><b>Raça: </b>
+                        <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                            <option value="cachorro_gato">Cachorro e Gato</option>
+                        </select>
+                    </li>
+
+                    <li><b>Preço: </b>
+                        <input type="text" placeholder="Por exemplo, R$ 10,00">
+                    </li>
+                    <li><b>Descrição: </b><br>
+                        <textarea rows="10" cols="120" placeholder="Descreva aqui informações adicionais"></textarea>
+                    </li>
+                    <br>
+                    <Button>Realizar Tarefa</Button>
+                </ul>
+                <!--Fim da div que contem os dados cadastrais dos produtos-->
+            </div>
+            <Button>Adicionar Serviços</Button>
+            <Button>Atualizar Serviços</Button>
+            <Button>Remover Serviços</Button>
+            <Button>Consultar Serviços</Button>
+
+        </div>
+</body>
+
+</html>
