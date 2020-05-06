@@ -1,5 +1,7 @@
-.blank {
-    height: 1600px;
+@media screen and (min-width: 900px) {
+    .blank {
+        height: 2800px;
+    }
 }
 
 .shop {
@@ -9,13 +11,15 @@
 }
 
 .shop .shopOpt {
-    width: 200px;
-    margin-right: 20 px;
+    margin-right: 10 px;
     padding: 10px;
+    display: inline;
 }
 
 .shop .box-container {
-    width: 100%;
+    width: 98%;
+    margin: 3% 3% 3% 0%;
+    display: inline-flexbox;
 }
 
 li {
@@ -23,8 +27,28 @@ li {
     display: inline;
 }
 
+.product-container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: space-around;
+}
+
+.product-container li.product {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 25%;
+}
+
+.product-container li.product button {
+    width: 100px;
+    padding: 0;
+}
+
 .product-container li.product img {
-    width: 10%;
+    width: 55%;
+    border-radius: 5%;
 }
 
 .product-container .product .priceTag {
