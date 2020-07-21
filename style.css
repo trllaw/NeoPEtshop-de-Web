@@ -170,10 +170,21 @@ cellphone size
     padding: 12px;
     border: 25px;
     width: auto;
+    color: #A95534;
+    font-size: large;
+    font-weight: bold;
 }
 
 .header-buttons a:hover {
     background-color: #b9aa72;
+}
+
+.header-buttons a:link {
+    text-decoration: none;
+}
+
+.header-buttons a:visited {
+    color: #A95534;
 }
 
 .logo {
@@ -345,4 +356,14 @@ UserPage
     padding: 20px;
     max-width: 100%;
     width: 25%;
+}
+
+section {
+    position: relative;
+    height: 700px;
+}
+
+section h1 {
+    padding-top: 50px;
+    text-align: center;
 }

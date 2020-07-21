@@ -15,6 +15,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
     <link href="adm_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -33,35 +35,463 @@
                     <a href="../index.html"><button>Sair</button></a>
                 </div>
             </div>
+            <!-- 
             <div class="b-box">
                 <div class="header-buttons">
-                    <a href="../adm/admEntregas.html">Entregas</a>
-                    <a href="../adm/admInventario.html">Inventário</a>
-                    <a href="../adm/admProdutos.html">Produtos</a>
-                    <a href="../adm/admServiços.html">Serviços</a>
-                    <a href="../adm/admVendas.html">Vendas</a>
-                    <a href="../adm/admEmpresa.html">Empresa</a>
+                    <a href="#Entregas">Entregas</a>
+                    <a href="#Inventario">Inventário</a>
+                    <a href="#Produtos">Produtos</a>
+                    <a href="#Servicos">Serviços</a>
+                    <a href="#Vendas">Vendas</a>
+                    <a href="#Empresa">Empresa</a>
                 </div>
-            </div>
+
+            </div>-->
         </div>
         <!--fim cabecalho-->
+        <!--Nav bar-->
+        <nav class="navbar sticky-top navbar-expand-md navbar-light" style="background-color: #FFECA8; font-weight: bold; font-size: large; ">
+            <a class="navbar-brand" href="#Page">NeoPets</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Entregas">Entregas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Inventario">Inventário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Vendas">Vendas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Empresa">Empresa</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Fim da navbar-->
 
-        <div class="blank">
-            <h1>Mais vendidos</h1>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="../imgs/prom1.png" style="width:100%">
-                    <div class="text">Ração para gato: Sachê Whiskas Pedaços ao Molho Atum, 85g </div>
+        <!--Page-->
+        <section class="home-section" id="Page">
+            <div class="container-fluid">
+                <h1>Mais vendidos</h1>
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="../imgs/prom1.png" style="width:100%;">
+                        <div class="text">Ração para gato: Sachê Whiskas Pedaços ao Molho Atum, 85g </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <br>
+            </div>
+        </section>
+
+        <!--Entregas-->
+        <section id="Entregas">
+            <div class="container-fluid">
+                <h1 style="position: relative;margin-top: 10px;">Entregas</h1>
+                <!--Inicio do containter de filtro de pesquisa-->
+                <div class="search-container">
+                    <h2>Filtros:</h2>
+                    <ul class="list">
+                        <li>
+                            <label for="clas_ordem"> Ordem:</label>
+                            <select id="ordem">
+                                <option value="nenhum" selected>Nenhuma</option>
+                                <option value="recente" >Mais recente</option>
+                                <option value="antigo">Mais antigo</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="clas_ped"> Pedido para:</label>
+                            <select id="pedido">
+                                <option value="nenhum" selected >Nenhuma</option>
+                                <option value="Cachoro" >Cachoro</option>
+                                <option value="gato">Gato</option>
+                                <option value="cachorro_gato">Cachorro e Gato</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="clas_marca"> Marca:</label>
+                            <select id="marca">
+                                <option value="nenhum" selected >Nenhum</option>
+                                <option value="Pedigree" >Pedigree</option>
+                                <option value="Purina">Purina – Dog Show</option>
+                                <option value="Royal">Royal Canin</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" placeholder=" Digite o Cliente">
+                        </li>
+                        <button>Pesquisar</button>
+                    </ul>
+                    <!--Fim do containter de filtro de pesquisa-->
+                </div>
+                <!--Inicio do containter do resultado da pesquisa-->
+                <div class="result-container">
+                    <h2>Resultados:</h2>
+                    <table>
+                        <tr>
+                            <th>Código</th>
+                            <th>Data da compra</th>
+                            <th>Data de entrega prevista</th>
+                            <th>Cliente</th>
+                            <th>Endereço</th>
+                            <th>Preço do pedido</th>
+                            <th>Quantidade de produtos</th>
+                            <th>Descrição</th>
+                        </tr>
+                        <tr>
+                            <td>000000</td>
+                            <td>01/02/2017</td>
+                            <td>02/02/2017</td>
+                            <td>Fulano da Silva</td>
+                            <td>Rua Agusta, 1007</td>
+                            <td>R$ 66</td>
+                            <td>1</td>
+                            <td>2 Racão para filhotes (cachorro)</td>
+                        </tr>
+                        <tr>
+                            <td>000001</td>
+                            <td>02/02/2017</td>
+                            <td>02/02/2017</td>
+                            <td>Maria Fonseca</td>
+                            <td>Avenida Paulista, 500</td>
+                            <td>R$ 22,90</td>
+                            <td>1</td>
+                            <td>10 whiskas sachês sabor peixe para filhotes de gato</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--Fim do containter do resultado da pesquisa-->
+            </div>
+        </section>
+
+        <!--Inventario-->
+        <section id="Inventario">
+            <div class="container-fluid">
+                <h1>Inventário</h1>
+                <!--Inicio do containter de filtro de pesquisa-->
+                <div class="search-container">
+                    <h2>Filtros:</h2>
+                    <ul class="list">
+                        <li>
+                            <label for="clas_ordem"> Escolha a Ordem:</label>
+                            <select id="ordem">
+                            <option value="nenhum" selected>Nenhuma</option>
+                            <option value="recente" >Mais recente</option>
+                            <option value="antigo">Mais antigo</option>
+                            <option value="mais_relevante">Mais Relevante</option>
+                            <option value="menos_relevante" >Menos Relevante</option>
+                        </select>
+                        </li>
+                        <li>
+                            <label for="clas_preco"> Classificar por preço:</label>
+                            <select id="preco">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="caro" >Mais caro</option>
+                            <option value="barato">Mais barato</option>
+                        </select>
+                        </li>
+                        <li>
+                            <label for="clas_raca"> Qual Raça:</label>
+                            <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                        </li>
+                        <li>
+                            <label for="clas_porte"> Qual Porte:</label>
+                            <select id="porte">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="filhote" >Filhote</option>
+                            <option value="pequeno">Pequene</option>
+                            <option value="médio" >Médio</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                        </li>
+                        <button>Pesquisar</button>
+                    </ul>
+                    <!--Fim do containter de filtro de pesquisa-->
+                </div>
+                <!--Inicio do containter do resultado da pesquisa-->
+                <div class="result-container">
+                    <h2>Resultados:</h2>
+                    <table>
+                        <tr>
+                            <th>Código</th>
+                            <th>Categoria produto</th>
+                            <th>Raça</th>
+                            <th>Porte</th>
+                            <th>Marca</th>
+                            <th>Preço unitário</th>
+                            <th>Quantidade</th>
+                            <th>Descrição</th>
+                        </tr>
+                        <tr>
+                            <td>000000</td>
+                            <td>Brinquedo</td>
+                            <td>Cachoro</td>
+                            <td>Pequeno</td>
+                            <td>Puretoy</td>
+                            <td>R$ 36,00</td>
+                            <td>32</td>
+                            <td>Trata-se de um kit osso para cachorros.</td>
+                        </tr>
+                        <tr>
+                            <td>000001</td>
+                            <td>Sachê 85g peixes</td>
+                            <td>Gato</td>
+                            <td>filhote</td>
+                            <td>Whiskas</td>
+                            <td>R$2,29</td>
+                            <td>120</td>
+                            <td>Trata-se de uma das raçoes mais vendidas para filhotes</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--Fim do containter do resultado da pesquisa-->
+            </div>
+        </section>
+        <!--Produtos-->
+        <section id="Produtos">
+            <div class="container-fluid">
+                <h1>Produtos</h1>
+                <!--Inicio da div que contem os dados cadastrais dos produtos-->
+                <div class="crud-data">
+                    <h2>Adicionar</h2>
+                    <ul class="crud">
+                        <li><b>Código do produto: </b>
+                            <input type="text">
+                        </li>
+                        <li><b>Categoria produto: </b>
+                            <input type="text">
+                        </li>
+                        <li><b>Marca: </b>
+                            <input type="text" placeholder="Ex: Whiskas">
+                        </li>
+                        <li><b>Raça: </b>
+                            <select id="raca">
+                                <option value="nenhum" selected >Nenhuma</option>
+                                <option value="cachoro" >Cachoro</option>
+                                <option value="gato">Gato</option>
+                            </select>
+                        </li>
+                        <li><b>Porte: </b>
+                            <select id="porte">
+                                <option value="nenhum" selected >Nenhuma</option>
+                                <option value="filhote" >Filhote</option>
+                                <option value="pequeno">Pequene</option>
+                                <option value="médio" >Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </li>
+                        <li><b>Preço unitário: </b>
+                            <input type="text" placeholder="Por exemplo, R$ 10,00">
+                        </li>
+                        <li><b>Descrição: </b><br>
+                            <textarea rows="10" cols="120" placeholder="Descreva aqui informações adicionais"></textarea>
+                        </li>
+                        <br>
+                        <Button>Realizar Tarefa</Button>
+                    </ul>
+                    <!--Fim da div que contem os dados cadastrais dos produtos-->
+                </div>
+                <Button>Adicionar Produtos</Button>
+                <Button>Atualizar Produtos</Button>
+                <Button>Remover Produtos</Button>
+                <Button>Consultar produtos</Button>
 
             </div>
-            <br>
-        </div>
+
+        </section>
+        <!--Serviços-->
+        <section id="Servicos">
+            <div class="container-fluid">
+                <h1>Serviços</h1>
+                <!--Inicio da div que contem os dados cadastrais dos produtos-->
+                <div class="crud-data">
+                    <h2>Adicionar</h2>
+                    <ul class="crud">
+                        <li><b>Serviço a oferecer: </b>
+                            <input type="text">
+                        </li>
+
+                        <li><b>Raça: </b>
+                            <select id="raca">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                            <option value="cachorro_gato">Cachorro e Gato</option>
+                        </select>
+                        </li>
+
+                        <li><b>Preço: </b>
+                            <input type="text" placeholder="Por exemplo, R$ 10,00">
+                        </li>
+                        <li><b>Descrição: </b><br>
+                            <textarea rows="10" cols="120" placeholder="Descreva aqui informações adicionais"></textarea>
+                        </li>
+                        <br>
+                        <Button>Realizar Tarefa</Button>
+                    </ul>
+                    <!--Fim da div que contem os dados cadastrais dos produtos-->
+                </div>
+                <Button>Adicionar Serviços</Button>
+                <Button>Atualizar Serviços</Button>
+                <Button>Remover Serviços</Button>
+                <Button>Consultar Serviços</Button>
+
+            </div>
+        </section>
+        <!--Vendas-->
+        <section id="Vendas">
+            <div class="container-fluid">
+                <h1>Vendas</h1>
+                <!--Inicio do containter de vendas no mês-->
+                <div class="vendas-container">
+                    <h2>Deste mês:</h2>
+                    <ul class="list">
+                        <li>
+                            <label for="saldo_inicial"> Saldo inicial:</label> <span>+ 1000,00</span>
+                        </li>
+                        <li>
+                            <label for="saldo_final"> Saldo final:</label> <span>+ 1088,90</span>
+                        </li>
+                        <li>
+                            <label for="saldo_inicial"> Valor arrecadado:</label> <span> 88,90</span>
+                        </li>
+                        <li>
+                            <label for="produto_destaque"> Quantidade de produtos:</label> <span>12</span>
+                        </li>
+                        <li>
+                            <label for="produto_destaque"> Produto destaque:</label> <span>whiskas sachês 85g peixes</span>
+                        </li>
+                    </ul>
+                    <ul class="list">
+                        <li>
+                            <label for="vendas_vista"> Vendas á vista:</label> <span> 1</span>
+                        </li>
+                        <li>
+                            <label for="cliente_vista"> Cliente destaque :</label> <span>Fulano da Silva</span>
+                        </li>
+                        <li>
+                            <label for="vendas_parc"> Vendas parceladas:</label> <span>1</span>
+                        </li>
+                        <li>
+                            <label for="cliente_parc"> Cliente destaque:</label> <span>Maria Fonseca</span>
+                        </li>
+                    </ul>
+                    <!--Fim do containter de vendas no mês-->
+                </div>
+                <!--Inicio do containter de filtro de pesquisa-->
+                <div class="search-container">
+                    <h2>Filtros:</h2>
+                    <ul class="list">
+                        <li>
+                            <label for="clas_ordem"> Ordem cronológica:</label>
+                            <select id="ordem">
+                                <option value="nenhum" selected>Nenhuma</option>
+                                <option value="recente" >Mais recente</option>
+                                <option value="antigo">Mais antigo</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" placeholder=" Digite o Produto Destaque" size="30">
+                        </li>
+                        <li>
+                            <label for="clas_valor arrecadado"> Valor arrecadado:</label>
+                            <select id="marca">
+                                <option value="nenhum" selected >Nenhum</option>
+                                <option value="crescente" >Crescente</option>
+                                <option value="decrescente">Decrescente</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" placeholder=" Digite o Cliente Destaque" size="30">
+                        </li>
+                        <button>Pesquisar</button>
+                    </ul>
+                    <!--Fim do containter de filtro de pesquisa-->
+                </div>
+                <!--Inicio do containter do resultado da pesquisa-->
+                <div class="result-container">
+                    <h2>Resultados:</h2>
+                    <table>
+                        <tr>
+                            <th>Mês/Ano</th>
+                            <th>Saldo inicial</th>
+                            <th>Valor arrecadado</th>
+                            <th>Quantidade de produtos</th>
+                            <th>Produto destaque</th>
+                            <th>Vendas á vista</th>
+                            <th>Cliente destaque</th>
+                            <th>Vendas parceladas</th>
+                            <th>Cliente destaque</th>
+                        </tr>
+                        <tr>
+                            <td>Fevereiro/2017</td>
+                            <td>+1000,00</td>
+                            <td>R$ 88,90</td>
+                            <td>12</td>
+                            <td>whiskas sachês 85g peixes</td>
+                            <td>1</td>
+                            <td>Fulano da Silva</td>
+                            <td>1</td>
+                            <td>Maria Fonseca</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--Fim do containter do resultado da pesquisa-->
+            </div>
+        </section>
+        <!--Empresa-->
+        <section id="Empresa">
+            <div class="container-fluid">
+                <h1>Dados sobre a Empresa</h1>
+                <!--Inicio da div que contem os dados cadastrais da empresa-->
+                <div class="empresa-data">
+                    <ul>
+                        <li><b>Endereço: </b>
+                            <input type="text" placeholder="Endereço da loja fisica">
+                        </li>
+                        <li><b>CNPJ: </b>
+                            <input type="text" placeholder="01.123.456/7890-12" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}" required>
+                        </li>
+                        <li><b>Telefone fixo: </b>
+                            <input type="text" placeholder="(11)1111-1111" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required>
+                        </li>
+                        <li><b>Celular: </b>
+                            <input type="text" placeholder="(22)92222-2222" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required>
+                        </li>
+                        <li><b>Email: </b>
+                            <input type="text" placeholder="user@email.com">
+                        </li>
+                        <li><b>Sobre: </b> <br>
+                            <textarea rows="10" cols="120"></textarea>
+                        </li>
+                    </ul>
+                    <Button>Atualizar Dados</Button>
+                </div>
+                <!--Inicio da div que contem os dados cadastrais da empresa-->
+            </div>
+        </section>
 
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
