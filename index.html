@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -22,7 +24,7 @@
         <!--Inicio cabecalho-->
         <div class="header">
             <div class="top-header">
-                <a href="index.html"><img src="imgs/logo.png" class="logo header-section" alt="logo " </img></a>
+                <a href="index.html"><img src="imgs/logo.png" class="logo header-section" alt="logo "></a>
                 <div class="search-box header-section">
                     <input type="text" placeholder="Busque aqui!">
                     <button>Buscar</button>
@@ -34,6 +36,7 @@
                     <button>Criar Conta</button>
                 </div>
             </div>
+            <!--
             <div class="b-box">
                 <div class="header-buttons">
                     <a href="shop/shop.html">Loja</a>
@@ -42,18 +45,246 @@
                     <a href="user/userPage.html">Área de Usuario</a>
                     <a href="adm/AdmPage.html">Área de Administrador</a>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!--fim cabecalho-->
+        <!--Nav bar-->
+        <nav class="navbar sticky-top navbar-expand-md navbar-light" style="background-color: #FFECA8; font-weight: bold; font-size: large; ">
+            <a class="navbar-brand" href="#app">NeoPets</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Loja">Loja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #A95534;" href="#Sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Fim da navbar-->
 
-        <div class="blank">
+        <div class="containeir-fluid">
             <h1>Destaques</h1>
-            <img class="banner" , src="imgs/prom1.png"></img>
+            <img src="imgs/prom1.png" alt="destaque">
             <p>Estamos com uma grande promoção de rações para cães e gatos, com descontos de até 50%, temos todas as marcas, não perca o seu tempo, compre agora mesmo. Ainda não tem cadastro? Não tem problema,o cadastro é fácil e rápido é só clicar no botão
                 no topo do site e preencher o seus dados e aproveitar essa super promoção, feita exclusivamente para você.
             </p>
         </div>
+        <!--Loja-->
+        <section id="Loja">
+            <div class="containeir-fluid">
+                <h1>Loja</h1>
+                <div class="shop">
+                    <div class="shopOpt box-container">
+                        <h3>Filtros</h3>
+                        <label for="clas_ped"> Produtos para:</label>
+                        <select id="produto">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="Cachoro" >Cachoro</option>
+                            <option value="gato">Gato</option>
+                            <option value="cachorro_gato">Cachorro e Gato</option>
+                            </select>
+                        <label for="clas_ped"> Organizar por:</label>
+                        <select id="produto">
+                            <option value="nenhum" selected >Nenhuma</option>
+                            <option value="Menor Preço" >Menor Preço</option>
+                            <option value="Menor Preço">Maior Preço</option>
+                            </select>
+                        <label for="clas_marca"> Marca:</label>
+                        <select id="marca"> 
+                            <option value="nenhum" selected >Nenhum</option>
+                            <option value="Pedigree" >Pedigree</option>
+                            <option value="Purina">Purina – Dog Show</option>
+                            <option value="Royal">Royal Canin</option>
+                        </select>
+                    </div>
+                    <div class="shopProd">
+                        <div class="box-container ">
+                            <h2>Destaques e Promoções</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div class="line "></div>
+
+                        <div class="box-container ">
+                            <h2>Rações</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <div class="line "></div>
+
+                        <div class="box-container ">
+                            <h2>Petiscos</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="line "></div>
+
+                        <div class="box-container ">
+                            <h2>Acessórios</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="line "></div>
+
+                        <div class="box-container ">
+                            <h2>Higiene e beleza</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="line "></div>
+
+                        <div class="box-container ">
+                            <h2>Farmacia</h2>
+                            <ul class="product-container ">
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                                <li class="product ">
+                                    <img src="https://picsum.photos/150/150 ">
+                                    <span class="prodName ">Produto 1</span>
+                                    <span class="priceTag ">R$50,00</span>
+                                    <button>adicionar ao carrinho</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Servicos-->
+        <section id="Servicos">
+            <div class="containeir-fluid">
+                <div class="services">
+                    <h1>Serviços para Seu Pet!</h1>
+                    <img src="../imgs/happyCatShower.png">
+                    <p>Aqui na NeoPets Shop temos todo tipo de serviço para seu pet! Oferecemos banho e tosa, vacinações, consultas veterinarias e muito mais! Tudo isso com uma equipe de profissionais altamente qualificados para oferecer o melhor possivel
+                        para seu amigo!</p>
+                    <p>Você pode agendar o serviço desejado para seu pet por telefone, WhatsApp ou por e-mail</p>
+                    <ul>
+                        <li>Telefone: (16) 3123-4567</li>
+                        <li>WhatsApp: (16) 99123-4567</li>
+                        <li>E-mail: neopets@shop.com</li>
+                    </ul>
+                    <div class="box-container">
+                        <h2>Serviços</h2>
+                        <ul>
+                            <li>
+                                <h3>Banho</h3>
+                                <p>Banho Completo para seu animalzinho ficar lindo e cheiroso. A partir de R$40</p>
+                            </li>
+                            <li>
+                                <h3>Tosa</h3>
+                                <p>Tosa completa e estilização dos pelos do seu pet. A partir de R$40</p>
+                            </li>
+                            <li>
+                                <h3>Vacinação</h3>
+                                <p>Aplicação de diversas vacinas. Preço varia de acordo com a dose e tipo da vacina, consulte nossos especialistas</p>
+                            </li>
+                            <li>
+                                <h3>Consultas</h3>
+                                <p>Consulta para seu pet com um de nossos veterinários especializados. A partir de R$100</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Sobre-->
+        <section id="Sobre">
+            <div class="containeir-fluid">
+                <div class="about">
+                    <h1>A NeoPets Shop</h1>
+                    <h2>Quem Somos Nós</h2>
+                    <p>A NeoPets Shop iniciou suas atividades com a inauguração da primeira unidade em 15 de Novembro de 1999, uma loja de produtos destinados aos animais de estimação de todos os tipos. Atualmente a loja trabalha virtualmente com serviços
+                        ficticios com o intuito de criar um site para a disciplina de desenvolvimento web, portanto serão utilizados HTML e CSS para criar a fase atual do site.</p>
+                    <img src="../imgs/neopet.jpg"></img>
+                    <p>Etiam sem justo, faucibus et est et, vulputate auctor est. Quisque et justo urna. Cras ornare condimentum egestas. Morbi vel nibh quis erat volutpat mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos. Praesent eget sem sed dui ultrices rhoncus. Morbi magna sapien, sollicitudin nec dolor sed, pretium consequat est. Curabitur sit amet tellus sed turpis facilisis hendrerit. In hac habitasse platea dictumst. Donec dolor
+                        diam, sagittis vitae lacus ut, lacinia ullamcorper lectus. Nullam ornare luctus dui ac fringilla. Donec in nunc quis arcu facilisis mattis in a purus. Sed vel odio mi. Nullam non nisl magna. Donec gravida purus vel interdum varius.
+                    </p>
+                    <p>Por este motivo a NeoPets Shop deseja ser, a cada dia, a melhor organização dedicada à criação e ao enriquecimento do vínculo entre pessoas e animais. Seu compromisso consiste em suprir as necessidades dos clientes na venda de produtos,
+                        tudo em um só ambiente, bonito, acolhedor, agradável e que estreite o máximo possível seu vínculo com a natureza.</p>
+                </div>
+            </div>
+        </section>
         <!--inicio rodape-->
         <div class="footer">
             <div class="footer-content">
@@ -79,6 +310,8 @@
         <!--fim rodape-->
 
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -15,8 +15,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
     <link href="adm_style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -35,23 +38,12 @@
                     <a href="../index.html"><button>Sair</button></a>
                 </div>
             </div>
-            <!-- 
-            <div class="b-box">
-                <div class="header-buttons">
-                    <a href="#Entregas">Entregas</a>
-                    <a href="#Inventario">Inventário</a>
-                    <a href="#Produtos">Produtos</a>
-                    <a href="#Servicos">Serviços</a>
-                    <a href="#Vendas">Vendas</a>
-                    <a href="#Empresa">Empresa</a>
-                </div>
-
-            </div>-->
         </div>
         <!--fim cabecalho-->
+
         <!--Nav bar-->
         <nav class="navbar sticky-top navbar-expand-md navbar-light" style="background-color: #FFECA8; font-weight: bold; font-size: large; ">
-            <a class="navbar-brand" href="#Page">NeoPets</a>
+            <a class="navbar-brand" href="#app">NeoPets</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -81,27 +73,50 @@
         <!--Fim da navbar-->
 
         <!--Page-->
-        <section class="home-section" id="Page">
-            <div class="container-fluid">
-                <h1>Mais vendidos</h1>
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="../imgs/prom1.png" style="width:100%;">
-                        <div class="text">Ração para gato: Sachê Whiskas Pedaços ao Molho Atum, 85g </div>
+        <section class="home-section">
+            <h1>Mais vendidos</h1>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="prom1.png" alt="Los Angeles" width="100" height="100">
+                        <div class="carousel-caption">
+                            <h3>Los Angeles</h3>
+                            <p>We had such a great time in LA!</p>
+                        </div>
                     </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+                    <div class="carousel-item">
+                        <img src="prom2.png" alt="Chicago" width="100" height="100">
+                        <div class="carousel-caption">
+                            <h3>Chicago</h3>
+                            <p>Thank you, Chicago!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="prom3.png" alt="New York" width="100" height="100">
+                        <div class="carousel-caption">
+                            <h3>New York</h3>
+                            <p>We love the Big Apple!</p>
+                        </div>
+                    </div>
                 </div>
-                <br>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
             </div>
         </section>
 
         <!--Entregas-->
         <section id="Entregas">
             <div class="container-fluid">
-                <h1 style="position: relative;margin-top: 10px;">Entregas</h1>
+                <h1 style="position: relative;margin-top: 10px">Entregas</h1>
                 <!--Inicio do containter de filtro de pesquisa-->
                 <div class="search-container">
                     <h2>Filtros:</h2>
