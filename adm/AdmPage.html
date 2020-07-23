@@ -27,7 +27,7 @@
         <!--Inicio cabecalho-->
         <div class="header">
             <div class="top-header">
-                <a href="../adm/AdmPage.html"><img src="../imgs/logo.png" class="logo header-section" alt="logo " </img></a>
+                <a href="../adm/AdmPage.html"><img src="../imgs/logo.png" class="logo header-section" alt="logo "></a>
                 <div class="search-box header-section">
                     <input type="text" placeholder="Busque aqui!">
                     <button>Buscar</button>
@@ -72,7 +72,7 @@
         </nav>
         <!--Fim da navbar-->
 
-        <!--Page-->
+        <!--Mais vendidos (Carousel com produtos mais vendidos ) -->
         <section class="home-section">
             <h1>Mais vendidos</h1>
             <div id="demo" class="carousel slide" data-ride="carousel">
@@ -81,35 +81,24 @@
                     <li data-target="#demo" data-slide-to="1"></li>
                     <li data-target="#demo" data-slide-to="2"></li>
                 </ul>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="prom1.png" alt="Los Angeles" width="100" height="100">
-                        <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>We had such a great time in LA!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="prom2.png" alt="Chicago" width="100" height="100">
-                        <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="prom3.png" alt="New York" width="100" height="100">
-                        <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                    </div>
-                </div>
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
                 <a class="carousel-control-next" href="#demo" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="prom1.png" alt="Los Angeles" width="100" height="100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="prom2.png" alt="Chicago" width="100" height="100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="prom3.png" alt="New York" width="100" height="100">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -158,37 +147,22 @@
                 <div class="result-container">
                     <h2>Resultados:</h2>
                     <table>
-                        <tr>
-                            <th>Código</th>
-                            <th>Data da compra</th>
-                            <th>Data de entrega prevista</th>
-                            <th>Cliente</th>
-                            <th>Endereço</th>
-                            <th>Preço do pedido</th>
-                            <th>Quantidade de produtos</th>
-                            <th>Descrição</th>
-                        </tr>
-                        <tr>
-                            <td>000000</td>
-                            <td>01/02/2017</td>
-                            <td>02/02/2017</td>
-                            <td>Fulano da Silva</td>
-                            <td>Rua Agusta, 1007</td>
-                            <td>R$ 66</td>
-                            <td>1</td>
-                            <td>2 Racão para filhotes (cachorro)</td>
-                        </tr>
-                        <tr>
-                            <td>000001</td>
-                            <td>02/02/2017</td>
-                            <td>02/02/2017</td>
-                            <td>Maria Fonseca</td>
-                            <td>Avenida Paulista, 500</td>
-                            <td>R$ 22,90</td>
-                            <td>1</td>
-                            <td>10 whiskas sachês sabor peixe para filhotes de gato</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th v-for="col in columns" v-on:click="sortTable(col)">{{col}}
+                                    <div class="arrow" v-if="col == sortColumn" v-bind:class="[ascending ? 'arrow_up' : 'arrow_down']"></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="row in get_rows()">
+                                <td v-for="col in columns">{{row[col]}}</td>
+                            </tr>
+                        </tbody>
                     </table>
+                    <div class="pagination">
+                        <div class="number" v-for="i in num_pages()" v-bind:class="[i == currentPage ? 'active' : '']" v-on:click="change_page(i)">{{i}}</div>
+                    </div>
                 </div>
                 <!--Fim do containter do resultado da pesquisa-->
             </div>
@@ -243,40 +217,9 @@
                     <!--Fim do containter de filtro de pesquisa-->
                 </div>
                 <!--Inicio do containter do resultado da pesquisa-->
-                <div class="result-container">
+                <div class="">
                     <h2>Resultados:</h2>
-                    <table>
-                        <tr>
-                            <th>Código</th>
-                            <th>Categoria produto</th>
-                            <th>Raça</th>
-                            <th>Porte</th>
-                            <th>Marca</th>
-                            <th>Preço unitário</th>
-                            <th>Quantidade</th>
-                            <th>Descrição</th>
-                        </tr>
-                        <tr>
-                            <td>000000</td>
-                            <td>Brinquedo</td>
-                            <td>Cachoro</td>
-                            <td>Pequeno</td>
-                            <td>Puretoy</td>
-                            <td>R$ 36,00</td>
-                            <td>32</td>
-                            <td>Trata-se de um kit osso para cachorros.</td>
-                        </tr>
-                        <tr>
-                            <td>000001</td>
-                            <td>Sachê 85g peixes</td>
-                            <td>Gato</td>
-                            <td>filhote</td>
-                            <td>Whiskas</td>
-                            <td>R$2,29</td>
-                            <td>120</td>
-                            <td>Trata-se de uma das raçoes mais vendidas para filhotes</td>
-                        </tr>
-                    </table>
+
                 </div>
                 <!--Fim do containter do resultado da pesquisa-->
             </div>
@@ -507,6 +450,8 @@
 
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../index_script.js"></script>
 </body>
 
 </html>
