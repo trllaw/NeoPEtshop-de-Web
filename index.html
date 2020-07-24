@@ -124,10 +124,11 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
+                            <button @click="getProductsByTag('destaque')">teste</button>
                             <li v-for="dest in Destaques" class="list-group-item">
-                                <img :src="dest.img">
-                                <span>{{ dest.prodName}}</span>
-                                <span>{{ dest.priceTag}}</span>
+                                <img :src="dest[0].image">
+                                <span>{{ dest[0].title}}</span>
+                                <span>{{ dest[0].price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -293,6 +294,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index_script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 
 </html>

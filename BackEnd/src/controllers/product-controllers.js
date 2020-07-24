@@ -43,7 +43,7 @@ exports.getByTag = (req, res, next) => {
         .find({
             tags: req.params.tag,
             active: true 
-        }, 'title description price slug tags')
+        }, 'title price image')
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {

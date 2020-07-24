@@ -8,11 +8,12 @@
 var home = new Vue({
     el: '#Loja',
     data: {
-        Destaques: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
+        Destaques:[]
+        /*[
+            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
+            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
+            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' }
+        ]*/,
         Ração: [
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
@@ -38,8 +39,41 @@ var home = new Vue({
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
         ],
+    },
+    methods: {
+        async getProductsByTag(tag, prod) {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            let res = this.Destaques;
+            await axios.get('http://localhost:3000/products/tags/'+ tag)
+                .then(function(response) {
+                    console.log(response)
+                    res.push(response.data);
+                    //prod = res;
+                    this.Destaques = res;
+                    
+                })
+                .catch(function(error) {
+                    console.log("deu ruim");
+                    console.log(error);
+                    console.log(error.response);
+                    /*alert(error.response.data.error);
+                    let res = error.response.data.id;
+                    return res;*/
+                });
+        },
+        loadItens(){
+            this.getProductsByTag("destaque")//, this.Destaques);
+            .then(console.log("teste"))
+            /*getProductsByTag("racao", prod)
+            getProductsByTag("petisco", prod)
+            getProductsByTag("acessorio", prod)
+            getProductsByTag("higiene", prod)
+            getProductsByTag("farmacia", prod)*/
+        }
     }
 });
+window.onload = home.loadItens();
+
 
 /*Vue para a pagina do Adm */
 
