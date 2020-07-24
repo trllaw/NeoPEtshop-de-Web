@@ -21,9 +21,12 @@ body {
     background-color: #CFCFCF;
 }
 
+
+/*
 .show {
     background-color: red;
 }
+*/
 
 button {
     border-radius: 5px;
@@ -36,6 +39,10 @@ button {
 
 button:hover {
     background-color: #ffeca8ab;
+}
+
+.scrolling-wrapper {
+    overflow-x: auto;
 }
 
 
