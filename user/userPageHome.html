@@ -1,3 +1,8 @@
+<!--		Bacharelado em Ciencias de Computação
+	Nome: Leandro Satoshi 			    NUSP: 10893103 
+	Nome: Mateus Virginio Silva		    NUSP: 10284156	
+	Nome: Vinicius Ricardo Carvalho		NUSP: 10724413
+    -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -462,7 +467,7 @@
                     <h2>Quem Somos Nós</h2>
                     <p>A NeoPets Shop iniciou suas atividades com a inauguração da primeira unidade em 15 de Novembro de 1999, uma loja de produtos destinados aos animais de estimação de todos os tipos. Atualmente a loja trabalha virtualmente com serviços
                         ficticios com o intuito de criar um site para a disciplina de desenvolvimento web, portanto serão utilizados HTML e CSS para criar a fase atual do site.</p>
-                    <img src="../imgs/neopet.jpg"></img>
+                    <img src="../imgs/neopet.jpg" class="img-thumbnail m-2"></img>
                     <p>Etiam sem justo, faucibus et est et, vulputate auctor est. Quisque et justo urna. Cras ornare condimentum egestas. Morbi vel nibh quis erat volutpat mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                         himenaeos. Praesent eget sem sed dui ultrices rhoncus. Morbi magna sapien, sollicitudin nec dolor sed, pretium consequat est. Curabitur sit amet tellus sed turpis facilisis hendrerit. In hac habitasse platea dictumst. Donec dolor
                         diam, sagittis vitae lacus ut, lacinia ullamcorper lectus. Nullam ornare luctus dui ac fringilla. Donec in nunc quis arcu facilisis mattis in a purus. Sed vel odio mi. Nullam non nisl magna. Donec gravida purus vel interdum varius.
@@ -496,138 +501,138 @@
             </div>
         </div>
         <!--fim rodape-->
-    </div>
 
-
-    <!--Modal-->
-    <!--dados do pet-->
-    <div class="modal fade" id="petModal" tabindex="-1" role="dialog">
-        <div class=" modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"> Meus Pets</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+        <!--Modal-->
+        <!--dados do pet-->
+        <div class="modal fade" id="petModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Meus Pets</h5>
+                        <button type="button" class="close" data-dismiss="modal">
                         <span>x</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <div class="user-data">
-                        <img src="../imgs/doggo.jpeg" class="img-thumbnail" alt="pet image">
-                        <ul>
-                            <li><b>Nome:</b>
-                                <input type="text" placeholder="Dogge">
-                            </li>
-                            <li><b>Pet:</b>
-                                <input type="text" placeholder="cachorro">
-                            </li>
-                            <li><b>Raça: </b>
-                                <input type="text" placeholder="Shiba">
-                            </li>
-                            <li><b>Ultima Vacina: </b>
-                                <span>Raiva(20/07/2019)</span>
-                            </li>
-                            <li><b>Ultima Tosa: </b>
-                                <span>13/10/2019</span>
-                            </li>
-                            <li><b>Ultimo Banho:</b>
-                                <span>27/02/2020</span>
-                            </li>
-                        </ul>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn"> Atualizar</button>
-                    <button type="button" class="btn"> Remover</button>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <img src="../imgs/doggo.jpeg" class="img-thumbnail" alt="pet image">
+                            <ul>
+                                <li><b>Nome:</b>
+                                    <input type="text" placeholder="Dogge">
+                                </li>
+                                <li><b>Pet:</b>
+                                    <input type="text" placeholder="cachorro">
+                                </li>
+                                <li><b>Raça: </b>
+                                    <input type="text" placeholder="Shiba">
+                                </li>
+                                <li><b>Ultima Vacina: </b>
+                                    <span>Raiva(20/07/2019)</span>
+                                </li>
+                                <li><b>Ultima Tosa: </b>
+                                    <span>13/10/2019</span>
+                                </li>
+                                <li><b>Ultimo Banho:</b>
+                                    <span>27/02/2020</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Atualizar</button>
+                        <button type="button" class="btn"> Remover</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--novo pet-->
-    <div class="modal fade" id="newPetModal" tabindex="-1" role="dialog">
-        <div class=" modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"> Novo Pet</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+        <!--novo pet-->
+        <div class="modal fade" id="newPetModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Novo Pet</h5>
+                        <button type="button" class="close" data-dismiss="modal">
                         <span>x</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <div class="user-data">
-                        <ul>
-                            <li><b>Nome:</b>
-                                <input type="text" placeholder="nome do pet">
-                            </li>
-                            <li><b>Pet:</b>
-                                <input type="text" placeholder="pet">
-                            </li>
-                            <li><b>Raça: </b>
-                                <input type="text" placeholder="raça">
-                            </li>
-                        </ul>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn"> Adicionar</button>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <ul>
+                                <li><b>Nome:</b>
+                                    <input type="text" placeholder="nome do pet">
+                                </li>
+                                <li><b>Pet:</b>
+                                    <input type="text" placeholder="pet">
+                                </li>
+                                <li><b>Raça: </b>
+                                    <input type="text" placeholder="raça">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Adicionar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--dados do usuario-->
-    <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
-        <div class=" modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"> Usuario</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+        <!--dados do usuario-->
+        <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal">
                         <span>x</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <div class="user-data">
-                        <ul>
-                            <li>
-                                <div class="textBox"><span><b>Nome: </b> Usuario X</span> </div>
-                            </li>
-                            <li>
-                                <div class="textBox"><b>CPF: </b> </div>
-                                <input type="text" placeholder="123.456.789.01">
-                            </li>
-                            <li>
-                                <div class="textBox"><b>Telefone: </b> </div>
-                                <input type="text" placeholder="(11)1111-1111">
-                            </li>
-                            <li>
-                                <div class="textBox"><b>Celular: </b> </div>
-                                <input type="text" placeholder="(22)92222-2222">
-                            </li>
-                            <li>
-                                <div class="textBox"><b>Endereço: </b> </div>
-                                <input type="text" placeholder="Endereço do Usuario">
-                            </li>
-                            <li>
-                                <div class="textBox"><b>Email: </b> </div>
-                                <input type="text" placeholder="user@email.com">
-                            </li>
-                            <li><input type="checkbox">
-                                <div>Receber emails com as ultimas novidades da nossa loja.</div>
-                            </li>
-                        </ul>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn"> Atualizar Dados</button>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <ul>
+                                <li>
+                                    <div class="textBox"><span><b>Nome: </b> Usuario X</span> </div>
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>CPF: </b> </div>
+                                    <input type="text" placeholder="123.456.789.01">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Telefone: </b> </div>
+                                    <input type="text" placeholder="(11)1111-1111">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Celular: </b> </div>
+                                    <input type="text" placeholder="(22)92222-2222">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Endereço: </b> </div>
+                                    <input type="text" placeholder="Endereço do Usuario">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Email: </b> </div>
+                                    <input type="text" placeholder="user@email.com">
+                                </li>
+                                <li><input type="checkbox">
+                                    <div>Receber emails com as ultimas novidades da nossa loja.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Atualizar Dados</button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
