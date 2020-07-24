@@ -106,45 +106,10 @@
         <section id="Entregas">
             <div class="container-fluid">
                 <h1 style="position: relative;margin-top: 10px">Entregas</h1>
-                <!--Inicio do containter de filtro de pesquisa-->
-                <div class="search-container">
-                    <h2>Filtros:</h2>
-                    <ul class="list">
-                        <li>
-                            <label for="clas_ordem"> Ordem:</label>
-                            <select id="ordem">
-                                <option value="nenhum" selected>Nenhuma</option>
-                                <option value="recente" >Mais recente</option>
-                                <option value="antigo">Mais antigo</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label for="clas_ped"> Pedido para:</label>
-                            <select id="pedido">
-                                <option value="nenhum" selected >Nenhuma</option>
-                                <option value="Cachoro" >Cachoro</option>
-                                <option value="gato">Gato</option>
-                                <option value="cachorro_gato">Cachorro e Gato</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label for="clas_marca"> Marca:</label>
-                            <select id="marca">
-                                <option value="nenhum" selected >Nenhum</option>
-                                <option value="Pedigree" >Pedigree</option>
-                                <option value="Purina">Purina – Dog Show</option>
-                                <option value="Royal">Royal Canin</option>
-                            </select>
-                        </li>
-                        <li>
-                            <input type="text" placeholder=" Digite o Cliente">
-                        </li>
-                        <button>Pesquisar</button>
-                    </ul>
-                    <!--Fim do containter de filtro de pesquisa-->
-                </div>
                 <!--Inicio do containter do resultado da pesquisa-->
                 <div class="result-container">
+                    <h3>Barra de busca:
+                        <input type="text" placeholder=" Digite o que deseja buscar" v-model="search">{{search}}</h3>
                     <h2>Resultados:</h2>
                     <table>
                         <thead>
@@ -155,7 +120,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="row in get_rows()">
+                            <tr v-for="row in get_rows(search)">
                                 <td v-for="col in columns">{{row[col]}}</td>
                             </tr>
                         </tbody>
@@ -172,54 +137,28 @@
         <section id="Inventario">
             <div class="container-fluid">
                 <h1>Inventário</h1>
-                <!--Inicio do containter de filtro de pesquisa-->
-                <div class="search-container">
-                    <h2>Filtros:</h2>
-                    <ul class="list">
-                        <li>
-                            <label for="clas_ordem"> Escolha a Ordem:</label>
-                            <select id="ordem">
-                            <option value="nenhum" selected>Nenhuma</option>
-                            <option value="recente" >Mais recente</option>
-                            <option value="antigo">Mais antigo</option>
-                            <option value="mais_relevante">Mais Relevante</option>
-                            <option value="menos_relevante" >Menos Relevante</option>
-                        </select>
-                        </li>
-                        <li>
-                            <label for="clas_preco"> Classificar por preço:</label>
-                            <select id="preco">
-                            <option value="nenhum" selected >Nenhuma</option>
-                            <option value="caro" >Mais caro</option>
-                            <option value="barato">Mais barato</option>
-                        </select>
-                        </li>
-                        <li>
-                            <label for="clas_raca"> Qual Raça:</label>
-                            <select id="raca">
-                            <option value="nenhum" selected >Nenhuma</option>
-                            <option value="cachoro" >Cachoro</option>
-                            <option value="gato">Gato</option>
-                        </select>
-                        </li>
-                        <li>
-                            <label for="clas_porte"> Qual Porte:</label>
-                            <select id="porte">
-                            <option value="nenhum" selected >Nenhuma</option>
-                            <option value="filhote" >Filhote</option>
-                            <option value="pequeno">Pequene</option>
-                            <option value="médio" >Médio</option>
-                            <option value="grande">Grande</option>
-                        </select>
-                        </li>
-                        <button>Pesquisar</button>
-                    </ul>
-                    <!--Fim do containter de filtro de pesquisa-->
-                </div>
                 <!--Inicio do containter do resultado da pesquisa-->
-                <div class="">
+                <div class="result">
+                    <h3>Barra de busca:
+                        <input type="text" placeholder=" Digite o que deseja buscar" v-model="search">{{search}}</h3>
                     <h2>Resultados:</h2>
-
+                    <table>
+                        <thead>
+                            <tr>
+                                <th v-for="col in columns" v-on:click="sT(col)">{{col}}
+                                    <div class="arrow" v-if="col == sortColumn" v-bind:class="[ascending ? 'arrow_up' : 'arrow_down']"></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="row in get_rows(search)">
+                                <td v-for="col in columns">{{row[col]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <div class="number" v-for="i in num_pages()" v-bind:class="[i == currentPage ? 'active' : '']" v-on:click="change_page(i)">{{i}}</div>
+                    </div>
                 </div>
                 <!--Fim do containter do resultado da pesquisa-->
             </div>
@@ -355,63 +294,28 @@
                     </ul>
                     <!--Fim do containter de vendas no mês-->
                 </div>
-                <!--Inicio do containter de filtro de pesquisa-->
-                <div class="search-container">
-                    <h2>Filtros:</h2>
-                    <ul class="list">
-                        <li>
-                            <label for="clas_ordem"> Ordem cronológica:</label>
-                            <select id="ordem">
-                                <option value="nenhum" selected>Nenhuma</option>
-                                <option value="recente" >Mais recente</option>
-                                <option value="antigo">Mais antigo</option>
-                            </select>
-                        </li>
-                        <li>
-                            <input type="text" placeholder=" Digite o Produto Destaque" size="30">
-                        </li>
-                        <li>
-                            <label for="clas_valor arrecadado"> Valor arrecadado:</label>
-                            <select id="marca">
-                                <option value="nenhum" selected >Nenhum</option>
-                                <option value="crescente" >Crescente</option>
-                                <option value="decrescente">Decrescente</option>
-                            </select>
-                        </li>
-                        <li>
-                            <input type="text" placeholder=" Digite o Cliente Destaque" size="30">
-                        </li>
-                        <button>Pesquisar</button>
-                    </ul>
-                    <!--Fim do containter de filtro de pesquisa-->
-                </div>
                 <!--Inicio do containter do resultado da pesquisa-->
-                <div class="result-container">
+                <div class="resultc">
+                    <h3>Barra de busca:
+                        <input type="text" placeholder=" Digite o que deseja buscar" v-model="search">{{search}}</h3>
                     <h2>Resultados:</h2>
                     <table>
-                        <tr>
-                            <th>Mês/Ano</th>
-                            <th>Saldo inicial</th>
-                            <th>Valor arrecadado</th>
-                            <th>Quantidade de produtos</th>
-                            <th>Produto destaque</th>
-                            <th>Vendas á vista</th>
-                            <th>Cliente destaque</th>
-                            <th>Vendas parceladas</th>
-                            <th>Cliente destaque</th>
-                        </tr>
-                        <tr>
-                            <td>Fevereiro/2017</td>
-                            <td>+1000,00</td>
-                            <td>R$ 88,90</td>
-                            <td>12</td>
-                            <td>whiskas sachês 85g peixes</td>
-                            <td>1</td>
-                            <td>Fulano da Silva</td>
-                            <td>1</td>
-                            <td>Maria Fonseca</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th v-for="col in columns" v-on:click="shorTable(col)">{{col}}
+                                    <div class="arrow" v-if="col == sortColumn" v-bind:class="[ascending ? 'arrow_up' : 'arrow_down']"></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="row in get_rows(search)">
+                                <td v-for="col in columns">{{row[col]}}</td>
+                            </tr>
+                        </tbody>
                     </table>
+                    <div class="pagination">
+                        <div class="number" v-for="i in num_pages()" v-bind:class="[i == currentPage ? 'active' : '']" v-on:click="change_page(i)">{{i}}</div>
+                    </div>
                 </div>
                 <!--Fim do containter do resultado da pesquisa-->
             </div>
