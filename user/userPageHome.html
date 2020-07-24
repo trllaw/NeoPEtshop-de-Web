@@ -59,7 +59,7 @@
                         <a class="nav-link" style="color: #A95534;" href="#UltimosServiços">Ultimos Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #A95534;" href="#AreaDoUsuario">Área de Usuario</a>
+                        <a class="nav-link" style="color: #A95534;" href="#" data-toggle="modal" data-target="#userModal">Área de Usuario</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: #A95534;" href="#Sobre">Sobre</a>
@@ -82,22 +82,16 @@
                     <div class="carousel-item active">
                         <img src="../imgs/prom1.png" alt="Los Angeles" width="100" height="100">
                         <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>We had such a great time in LA!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="../imgs/prom2.png" alt="Chicago" width="100" height="100">
                         <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="../imgs/prom3.png" alt="New York" width="100" height="100">
                         <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
                         </div>
                     </div>
                 </div>
@@ -389,6 +383,77 @@
             </div>
 
         </section>
+
+        <!--Ultimas compras-->
+        <section id="UltimasCompras">
+            <div class="conteiner-fluid">
+                <h1>Utimas compras</h1>
+                <div class="box-container">
+                    <div class="container-fluid">
+                        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <img src="https://picsum.photos/150/150 " class="img-thumbnail card-img-top">
+                                    <div class="card-body">
+                                        <p class="prodName "><b>Nome:</b> Produto 1</p>
+                                        <p class="priceTag "><b>preço:</b> R$50,00</p>
+                                        <p><b>Quantia:</b> 3 unidades</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <img src="https://picsum.photos/150/150 " class="img-thumbnail card-img-top">
+                                    <div class="card-body">
+                                        <p class="prodName "><b>Nome:</b> Produto 1</p>
+                                        <p class="priceTag "><b>preço:</b> R$50,00</p>
+                                        <p><b>Quantia:</b> 3 unidades</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Ultimos serviços-->
+        <section id="UltimosServiços">
+            <div class="conteiner-fluid">
+                <h1>Ultimos Serviços</h1>
+                <div class="box-container">
+                    <div class="container-fluid">
+                        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <p><b>Serviço:</b> Vacina p/ Raiva</p>
+                                        <p><b>Preço:</b> R$50,00</p>
+                                        <p><b>Pet</b> Catto</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <p><b>Serviço:</b> Banho (cachorro)</p>
+                                        <p><b>Preço:</b> R$50,00</p>
+                                        <p><b>Pet</b> Dogge</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         <!--Sobre-->
         <section id="Sobre">
             <div class="containeir-fluid">
@@ -435,6 +500,7 @@
 
 
     <!--Modal-->
+    <!--dados do pet-->
     <div class="modal fade" id="petModal" tabindex="-1" role="dialog">
         <div class=" modal-dialog" role="document">
             <div class="modal-content">
@@ -477,6 +543,7 @@
         </div>
     </div>
 
+    <!--novo pet-->
     <div class="modal fade" id="newPetModal" tabindex="-1" role="dialog">
         <div class=" modal-dialog" role="document">
             <div class="modal-content">
@@ -507,6 +574,56 @@
             </div>
         </div>
     </div>
+
+    <!--dados do usuario-->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+        <div class=" modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-data">
+                        <ul>
+                            <li>
+                                <div class="textBox"><span><b>Nome: </b> Usuario X</span> </div>
+                            </li>
+                            <li>
+                                <div class="textBox"><b>CPF: </b> </div>
+                                <input type="text" placeholder="123.456.789.01">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Telefone: </b> </div>
+                                <input type="text" placeholder="(11)1111-1111">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Celular: </b> </div>
+                                <input type="text" placeholder="(22)92222-2222">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Endereço: </b> </div>
+                                <input type="text" placeholder="Endereço do Usuario">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Email: </b> </div>
+                                <input type="text" placeholder="user@email.com">
+                            </li>
+                            <li><input type="checkbox">
+                                <div>Receber emails com as ultimas novidades da nossa loja.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn"> Atualizar Dados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
