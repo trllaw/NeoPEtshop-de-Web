@@ -540,7 +540,7 @@ section h2 {
 
 /*Tabela do resultado da consulta, na page 'admIventario' e 'admEntrega*/
 
-.result-container table {
+table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -548,8 +548,8 @@ section h2 {
 
 /*Adicionando bordas aos elementos dessa tabela*/
 
-.result-container table td,
-.result-container table th {
+table td,
+table th {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -599,29 +599,32 @@ section h2 {
 
 /*Para melhor visualização da table, alterna o background por linha*/
 
-.result-container table tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color: #FFECA8;
 }
 
 
 /*Caso o mouse esteja em cima, mude a cor*/
 
-.result-container table tr:hover {
+table tr:hover {
     background-color: greenyellow;
 }
 
 
 /*Estilizando o cabeçalho da tabela*/
 
-.result-container table th {
+table th {
     text-align: left;
     background-color: #A95534;
     color: white;
 }
 
+
+/*CDiv do crud*/
+
 .crud-data {
-    background-color: black;
-    color: white;
+    background-color: #FFD026;
+    color: #A95534;
     display: block;
 }
 
