@@ -16,10 +16,8 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-    if(User.findOne({
-        username: req.body.username,
-        email: req.body.email
-    })){
+    if(User.findOne({username: req.body.username}) != null ||
+    User.findOne({email: req.body.email}) != null ){
         var User = new User(req.body);
         User
             .save()
@@ -40,7 +38,7 @@ exports.authenticate = (req, res, next) => {
             password: req.body.password
         })
         .then(x => {
-            res.status(201).send({message: 'Logadasso com sucesso!'});
+            res.status(201).send({message: 'Verificação sucedida', data: x});
         }).catch(e => {
             res.status(400).send({message: 'Usuario ou senha invalidos', data: e});
         });

@@ -8,67 +8,41 @@
 var home = new Vue({
     el: '#Loja',
     data: {
-        Destaques:[]
-        /*[
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' }
-        ]*/,
-        Ração: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
-        Petisco: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
-        Acessório: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
-        Higiene: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
-        Farmácia: [
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
-            { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
-        ],
+        Produtos:[],
         user: {
             username: "",
             email: "",
             password: "",
             phone: ""
+        },
+        tags: ["destaque", "racao", "petisco", "acessorios", "higiene", "farmacia"]
+    },
+    created: {
+        function(){
+        this.getProductsByTag();
         }
     },
     methods: {
-        async getProductsByTag(tag, prod) {
+        async getProductsByTag() {
             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            let res = this.Destaques;
-            await axios.get('http://localhost:3000/products/tags/'+ tag)
-                .then(function(response) {
-                    console.log(response.data)
-                    res.push(response.data);
-                    //prod = res;
-                    this.Destaques = res;
-                    
-                })
-                .catch(function(error) {
-                    console.log("deu ruim");
-                    console.log(error);
-                    console.log(error.response);
-                    /*alert(error.response.data.error);
-                    let res = error.response.data.id;
-                    return res;*/
-                });
+            let res = this.Produtos;
+            for(i in this.tags){
+                await axios.get('http://localhost:3000/products/tags/'+ this.tags[i])
+                    .then(function(response) {
+                        console.log(response.data)
+                        res.push(response.data);
+                        
+                    })
+                    .catch(function(error) {
+                        console.log("deu ruim");
+                        console.log(error);
+                        console.log(error.response);
+                    });
+            }
         },
 
         async createUser() {
+            console.log(this.user);
             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
             return await axios.post('http://localhost:3000/users', this.user)
                 .then(function(response) {
@@ -89,34 +63,28 @@ var home = new Vue({
 
         async verifyUser() {
             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            console.log("verificando login")
             return await axios.post('http://localhost:3000/users/auth', this.user)
                 .then(function(response) {
-                    //console.log(response);
-                    //console.log(response.data);
-                    alert("success");
-                    return response.data.id;
-
+                    if(response.data.data != null) {
+                        alert("success");
+                        return response.data.id;
+                    }
+                    else {
+                        alert("usuario ou senha invalidos");
+                    }
                 })
                 .catch(function(error) {
-                    console.log(error);
-                    console.log(error.response);
+                    console.log("error");
+                    //console.log(error.response);
                     alert(error.response.data.error);
                     let res = error.response.data.id;
                     return res;
                 });
-        },
-
-        loadItens(){
-            this.getProductsByTag("destaque")//, this.Destaques);)
-            /*getProductsByTag("racao", prod)
-            getProductsByTag("petisco", prod)
-            getProductsByTag("acessorio", prod)
-            getProductsByTag("higiene", prod)
-            getProductsByTag("farmacia", prod)*/
         }
     }
 });
-window.onload = home.loadItens();
+
 
 
 /*Vue para a pagina do Adm */

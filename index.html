@@ -33,9 +33,9 @@
                     <button>Buscar</button>
                 </div>
                 <div class="loginBox">
-                    <input type="text" placeholder="usuario">
-                    <input type="password" placeholder="senha">
-                    <a href="user/userPage.html"><button>Login</button></a>
+                    <input type="text" placeholder="usuario" v-model="user.username">
+                    <input type="password" placeholder="senha" v-model="user.password">
+                    <button @click="verifyUser()">Login</button>
                     <a href="#" data-toggle="modal" data-target="#userModal"><button>Criar Conta</button></a>
                 </div>
             </div>
@@ -124,11 +124,12 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
-                            <button @click="getProductsByTag('destaque')">teste</button>
-                            <li v-for="dest in Destaques[0]" class="list-group-item">
-                                <img :src="dest.image" class="prod-image">
-                                <span>{{ dest.title}}</span>
-                                <span>{{ dest.price}}</span>
+                            <button @click="getProductsByTag()">teste</button>
+                            <button @click="verifyUser()">Login</button>
+                            <li v-for="prod in Produtos[0]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -139,10 +140,10 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Rações</h2>
                         <ul class="list-group list-group-horizontal">
-                            <li v-for="racao in Ração" class="list-group-item">
-                                <img :src="racao.img">
-                                <span>{{ racao.prodName}}</span>
-                                <span>{{ racao.priceTag}}</span>
+                            <li v-for="prod in Produtos[1]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -153,10 +154,10 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Petisco</h2>
                         <ul class="list-group list-group-horizontal">
-                            <li v-for="petisco in Petisco" class="list-group-item">
-                                <img :src="petisco.img">
-                                <span>{{ petisco.prodName}}</span>
-                                <span>{{ petisco.priceTag}}</span>
+                            <li v-for="prod in Produtos[2]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -167,10 +168,10 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Acessórios</h2>
                         <ul class="list-group list-group-horizontal">
-                            <li v-for="ace in Acessório" class="list-group-item">
-                                <img :src="ace.img">
-                                <span>{{ ace.prodName}}</span>
-                                <span>{{ ace.priceTag}}</span>
+                            <li v-for="prod in Produtos[3]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -181,10 +182,10 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Higiene e Limpeza</h2>
                         <ul class="list-group list-group-horizontal">
-                            <li v-for="hig in Higiene" class="list-group-item">
-                                <img :src="hig.img">
-                                <span>{{ hig.prodName}}</span>
-                                <span>{{ hig.priceTag}}</span>
+                            <li v-for="prod in Produtos[4]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -195,10 +196,10 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Farmácia</h2>
                         <ul class="list-group list-group-horizontal">
-                            <li v-for="farm in Farmácia" class="list-group-item">
-                                <img :src="farm.img">
-                                <span>{{ farm.prodName}}</span>
-                                <span>{{ farm.priceTag}}</span>
+                            <li v-for="prod in Produtos[5]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -307,19 +308,19 @@
                             <ul>
                                 <li>
                                     <div class="textBox"><b>Nome de usuario: </b></div>
-                                    <input type="text" placeholder="Nome" v-model="user.username">
+                                    <input type="text" class="form-control" placeholder="Nome" v-model="user.username">
                                 </li>
                                 <li>
                                     <div class="textBox"><b>Celular: </b> </div>
-                                    <input type="text" placeholder="(22)92222-2222" v-model="user.phone">
+                                    <input type="text" class="form-control" placeholder="(22)92222-2222" v-model="user.phone">
                                 </li>
                                 <li>
                                     <div class="textBox"><b>Email: </b> </div>
-                                    <input type="text" placeholder="user@email.com" v-model="user.email">
+                                    <input type="text" class="form-control" placeholder="user@email.com" v-model="user.email">
                                 </li>
                                 <li>
                                     <div class="textBox"><b>Senha: </b> </div>
-                                    <input type="password" placeholder="********" v-model="user.password">
+                                    <input type="password" class="form-control" placeholder="********" v-model="user.password">
                                 </li>
                                 <li><input type="checkbox">
                                     <div>Receber emails com as ultimas novidades da nossa loja.</div>
