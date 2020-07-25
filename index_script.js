@@ -39,6 +39,12 @@ var home = new Vue({
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' }
         ],
+        user: {
+            username: "",
+            email: "",
+            password: "",
+            phone: ""
+        }
     },
     methods: {
         async getProductsByTag(tag, prod) {
@@ -46,7 +52,7 @@ var home = new Vue({
             let res = this.Destaques;
             await axios.get('http://localhost:3000/products/tags/'+ tag)
                 .then(function(response) {
-                    console.log(response)
+                    console.log(response.data)
                     res.push(response.data);
                     //prod = res;
                     this.Destaques = res;
@@ -61,9 +67,47 @@ var home = new Vue({
                     return res;*/
                 });
         },
+
+        async createUser() {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            return await axios.post('http://localhost:3000/users', this.user)
+                .then(function(response) {
+                    //console.log(response);
+                    //console.log(response.data);
+                    alert("success");
+                    return response.data.id;
+
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    console.log(error.response);
+                    alert(error.response.data.error);
+                    let res = error.response.data.id;
+                    return res;
+                });
+        },
+
+        async verifyUser() {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            return await axios.post('http://localhost:3000/users/auth', this.user)
+                .then(function(response) {
+                    //console.log(response);
+                    //console.log(response.data);
+                    alert("success");
+                    return response.data.id;
+
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    console.log(error.response);
+                    alert(error.response.data.error);
+                    let res = error.response.data.id;
+                    return res;
+                });
+        },
+
         loadItens(){
-            this.getProductsByTag("destaque")//, this.Destaques);
-            .then(console.log("teste"))
+            this.getProductsByTag("destaque")//, this.Destaques);)
             /*getProductsByTag("racao", prod)
             getProductsByTag("petisco", prod)
             getProductsByTag("acessorio", prod)

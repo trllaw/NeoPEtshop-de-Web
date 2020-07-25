@@ -18,7 +18,7 @@ const schema = new Schema({
     },
     cpf: {
         type: String,
-        required: true
+        required: false
     },
     phone: {
         type: String,
@@ -26,7 +26,7 @@ const schema = new Schema({
     },
     address: {
         type: String,
-        required: true
+        required: false
     },
     roles: [{
         type: String,

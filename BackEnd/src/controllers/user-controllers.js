@@ -16,13 +16,33 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-    var User = new User(req.body);
+    if(User.findOne({
+        username: req.body.username,
+        email: req.body.email
+    })){
+        var User = new User(req.body);
+        User
+            .save()
+            .then(x => {
+                res.status(201).send({message: 'Usuario cadastrado com sucesso!'});
+            }).catch(e => {
+                res.status(400).send({message: 'Falha ao cadastrar Usuario', data: e});
+            });
+    }else {
+        res.status(400).send({message: 'Falha ao cadastrar Usuario', data: e});
+    }
+};
+
+exports.authenticate = (req, res, next) => {
     User
-        .save()
+        .findOne({
+            username: req.body.username,
+            password: req.body.password
+        })
         .then(x => {
-            res.status(201).send({message: 'Usuario cadastrado com sucesso!'});
+            res.status(201).send({message: 'Logadasso com sucesso!'});
         }).catch(e => {
-            res.status(400).send({message: 'Falha ao cadastrar Usuario', data: e});
+            res.status(400).send({message: 'Usuario ou senha invalidos', data: e});
         });
 };
 

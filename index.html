@@ -125,10 +125,10 @@
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
                             <button @click="getProductsByTag('destaque')">teste</button>
-                            <li v-for="dest in Destaques" class="list-group-item">
-                                <img :src="dest[0].image">
-                                <span>{{ dest[0].title}}</span>
-                                <span>{{ dest[0].price}}</span>
+                            <li v-for="dest in Destaques[0]" class="list-group-item">
+                                <img :src="dest.image" class="prod-image">
+                                <span>{{ dest.title}}</span>
+                                <span>{{ dest.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -306,28 +306,20 @@
                         <div class="user-data">
                             <ul>
                                 <li>
-                                    <div class="textBox"><b>Nome: </b></div>
-                                    <input type="text" placeholder="Nome">
-                                </li>
-                                <li>
-                                    <div class="textBox"><b>CPF: </b> </div>
-                                    <input type="text" placeholder="123.456.789.01">
-                                </li>
-                                <li>
-                                    <div class="textBox"><b>Telefone: </b> </div>
-                                    <input type="text" placeholder="(11)1111-1111">
+                                    <div class="textBox"><b>Nome de usuario: </b></div>
+                                    <input type="text" placeholder="Nome" v-model="user.username">
                                 </li>
                                 <li>
                                     <div class="textBox"><b>Celular: </b> </div>
-                                    <input type="text" placeholder="(22)92222-2222">
-                                </li>
-                                <li>
-                                    <div class="textBox"><b>Endereço: </b> </div>
-                                    <input type="text" placeholder="Endereço do Usuario">
+                                    <input type="text" placeholder="(22)92222-2222" v-model="user.phone">
                                 </li>
                                 <li>
                                     <div class="textBox"><b>Email: </b> </div>
-                                    <input type="text" placeholder="user@email.com">
+                                    <input type="text" placeholder="user@email.com" v-model="user.email">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Senha: </b> </div>
+                                    <input type="password" placeholder="********" v-model="user.password">
                                 </li>
                                 <li><input type="checkbox">
                                     <div>Receber emails com as ultimas novidades da nossa loja.</div>
@@ -336,7 +328,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn">Efetuar cadastro</button>
+                        <button class="btn" @click="createUser()">Efetuar cadastro</button>
                     </div>
                 </div>
             </div>
