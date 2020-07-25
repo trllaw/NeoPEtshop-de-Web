@@ -4,7 +4,7 @@
 	Nome: Vinicius Ricardo Carvalho		NUSP: 10724413
 */
 
-/*Vue para a pagina inicial(Home/Index) */
+//--------------Vue para a pagina inicial(Home/Index)--------- */
 var home = new Vue({
     el: '#Loja',
     data: {
@@ -41,6 +41,7 @@ var home = new Vue({
     }
 });
 
+
 /*Vue para a pagina do Adm 
 ---------------- Tabelas --------------------------
 -- rows =  Possui arrays com os dados relevantes a sessão que está sendo implementada
@@ -50,7 +51,8 @@ var home = new Vue({
 ------------- e após isso, fizemos a manipulação de array pra pegar certo atributo, como nesse exemplo dado, row[id].
 
 */
-//parte do entregas
+
+//----------------------------------- PARTE DO ENTREGA -----------------------------------//
 var entregas = new Vue({
     el: '.result-container',
     data: {
@@ -122,7 +124,7 @@ var entregas = new Vue({
     }
 });
 
-//parte do inventario
+//-------------------------------------- PARTE DO INVENTARIO ----------------------------------------//
 var inventario = new Vue({
     el: '.result',
     data: {
@@ -184,7 +186,7 @@ var inventario = new Vue({
     }
 });
 
-//parte de vendas
+//---------------------------------PARTE DE VENDAS-----------------------------------------------//
 var vendas = new Vue({
     el: '.resultc',
     data: {
@@ -247,3 +249,178 @@ var vendas = new Vue({
         }
     }
 });
+
+//-------------------------PARTE DE SERVIÇO--------------------------------------------------//
+
+var service = new Vue({
+    el: '#consulta',
+    data: {
+        search: '',
+        currentPage: 1,
+        elementsPerPage: 6,
+        ascending: false,
+        sortColumn: '',
+        rows: [
+            { id: 1, Servico: 'kk', Raça: 'Produto 1', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' },
+            { id: 2, Servico: 'oo', Raça: 'Produto 1', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' },
+            { id: 3, Servico: 'll', Raça: 'Produto 1', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' }
+        ]
+    },
+    methods: {
+        "shorTable": function sortTable(col) {
+            if (this.sortColumn === col) {
+                this.ascending = !this.ascending;
+            } else {
+                this.ascending = true;
+                this.sortColumn = col;
+            }
+
+            var ascending = this.ascending;
+            //entregas
+            this.rows.sort(function(a, b) {
+                if (a[col] > b[col]) {
+                    return ascending ? 1 : -1
+                } else if (a[col] < b[col]) {
+                    return ascending ? -1 : 1
+                }
+                return 0;
+            })
+
+        },
+        "num_pages": function num_pages() {
+            return Math.ceil(this.rows.length / this.elementsPerPage);
+        },
+        "get_rows": function get_rows() {
+            var start = (this.currentPage - 1) * this.elementsPerPage;
+            var end = start + this.elementsPerPage;
+            return this.rows.slice(start, end);
+        },
+        "change_page": function change_page(page) {
+            this.currentPage = page;
+        }
+    },
+    computed: {
+        "columns": function columns() {
+            if (this.rows.length == 0) {
+                return [];
+            }
+            return Object.keys(this.rows[0])
+        }
+    }
+});
+
+//------------------------- PARTE DE PRODUTO --------------------------------------------------//
+
+var product = new Vue({
+    el: '#consulta_2',
+    data: {
+        search: '',
+        currentPage: 1,
+        elementsPerPage: 6,
+        ascending: false,
+        sortColumn: '',
+        rows: [
+            { id: 1, Validade: 'kk', Categoria: 'Produto 1', Marca: 'ashdhashdhas', Raça: 'ashdhashdhas', Porte: 'ashdhashdhas', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' },
+            { id: 2, Validade: 'll', Categoria: 'Produto 1', Marca: 'ashdhashdhas', Raça: 'ashdhashdhas', Porte: 'ashdhashdhas', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' },
+            { id: 3, Validade: '00', Categoria: 'Produto 1', Marca: 'ashdhashdhas', Raça: 'ashdhashdhas', Porte: 'ashdhashdhas', Preço: 'R$ 50,00', descrição: 'ashdhashdhas' }
+        ]
+    },
+    methods: {
+        "shorTable": function sortTable(col) {
+            if (this.sortColumn === col) {
+                this.ascending = !this.ascending;
+            } else {
+                this.ascending = true;
+                this.sortColumn = col;
+            }
+
+            var ascending = this.ascending;
+            //entregas
+            this.rows.sort(function(a, b) {
+                if (a[col] > b[col]) {
+                    return ascending ? 1 : -1
+                } else if (a[col] < b[col]) {
+                    return ascending ? -1 : 1
+                }
+                return 0;
+            })
+
+        },
+        "num_pages": function num_pages() {
+            return Math.ceil(this.rows.length / this.elementsPerPage);
+        },
+        "get_rows": function get_rows() {
+            var start = (this.currentPage - 1) * this.elementsPerPage;
+            var end = start + this.elementsPerPage;
+            return this.rows.slice(start, end);
+        },
+        "change_page": function change_page(page) {
+            this.currentPage = page;
+        }
+    },
+    computed: {
+        "columns": function columns() {
+            if (this.rows.length == 0) {
+                return [];
+            }
+            return Object.keys(this.rows[0])
+        }
+    }
+});
+
+
+function adicionar(id) {
+    if (id == 0) {
+        document.getElementById("consulta_2").style.display = "none";
+        document.getElementById("remover_2").style.display = "none";
+        document.getElementById("atualizar_2").style.display = "none";
+        document.getElementById("add_2").style.display = "block";
+    } else {
+        document.getElementById("consulta").style.display = "none";
+        document.getElementById("remover").style.display = "none";
+        document.getElementById("atualizar").style.display = "none";
+        document.getElementById("add").style.display = "block";
+    }
+}
+
+function atualizar(id) {
+    if (id == 0) {
+        document.getElementById("consulta_2").style.display = "none";
+        document.getElementById("remover_2").style.display = "none";
+        document.getElementById("atualizar_2").style.display = "block";
+        document.getElementById("add_2").style.display = "none";
+    } else {
+        document.getElementById("consulta").style.display = "none";
+        document.getElementById("remover").style.display = "none";
+        document.getElementById("add").style.display = "none";
+        document.getElementById("atualizar").style.display = "block";
+    }
+}
+
+function remover(id) {
+    if (id == 0) {
+        document.getElementById("consulta_2").style.display = "none";
+        document.getElementById("remover_2").style.display = "block";
+        document.getElementById("atualizar_2").style.display = "none";
+        document.getElementById("add_2").style.display = "none";
+    } else {
+        document.getElementById("consulta").style.display = "none";
+        document.getElementById("add").style.display = "none";
+        document.getElementById("atualizar").style.display = "none";
+        document.getElementById("remover").style.display = "block";
+    }
+}
+
+function consultar(id) {
+    if (id == 0) {
+        document.getElementById("consulta_2").style.display = "block";
+        document.getElementById("remover_2").style.display = "none";
+        document.getElementById("atualizar_2").style.display = "none";
+        document.getElementById("add_2").style.display = "none";
+    } else {
+        document.getElementById("add").style.display = "none";
+        document.getElementById("remover").style.display = "none";
+        document.getElementById("atualizar").style.display = "none";
+        document.getElementById("consulta").style.display = "block";
+    }
+}
