@@ -8,12 +8,13 @@
 var home = new Vue({
     el: '#Loja',
     data: {
-        Destaques:[]
-        /*[
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
-            { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' }
-        ]*/,
+        Destaques: []
+            /*[
+                { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
+                { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' },
+                { image: 'https://picsum.photos/150/150', title: 'Produto 1', price: 'R$ 50,00' }
+            ]*/
+            ,
         Ração: [
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
             { img: 'https://picsum.photos/150/150', prodName: 'Produto 1', priceTag: 'R$ 50,00' },
@@ -48,15 +49,16 @@ var home = new Vue({
     },
     methods: {
         async getProductsByTag(tag, prod) {
+            console.log("teste");
             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
             let res = this.Destaques;
-            await axios.get('http://localhost:3000/products/tags/'+ tag)
+            await axios.get('http://localhost:3000/products/tags/' + tag)
                 .then(function(response) {
                     console.log(response.data)
                     res.push(response.data);
                     //prod = res;
                     this.Destaques = res;
-                    
+
                 })
                 .catch(function(error) {
                     console.log("deu ruim");
@@ -69,6 +71,7 @@ var home = new Vue({
         },
 
         async createUser() {
+            console.log("foi?");
             axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
             return await axios.post('http://localhost:3000/users', this.user)
                 .then(function(response) {
@@ -106,18 +109,19 @@ var home = new Vue({
                 });
         },
 
-        loadItens(){
-            this.getProductsByTag("destaque")//, this.Destaques);)
-            /*getProductsByTag("racao", prod)
-            getProductsByTag("petisco", prod)
-            getProductsByTag("acessorio", prod)
-            getProductsByTag("higiene", prod)
-            getProductsByTag("farmacia", prod)*/
+        loadItens() {
+            this.getProductsByTag("destaque") //, this.Destaques);)
+                /*getProductsByTag("racao", prod)
+                getProductsByTag("petisco", prod)
+                getProductsByTag("acessorio", prod)
+                getProductsByTag("higiene", prod)
+                getProductsByTag("farmacia", prod)*/
         }
     }
 });
 window.onload = home.loadItens();
 
+document.getElementById("cadastro").addEventListener('click', home.createUser);
 
 /*Vue para a pagina do Adm */
 
