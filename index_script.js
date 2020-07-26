@@ -214,10 +214,18 @@ var inventario = new Vue({
         "num_pages": function num_pages() {
             return Math.ceil(this.rows.length / this.elementsPerPage);
         },
-        "get_rows": function get_rows() {
+        "get_rows": function get_rows(search) {
             var start = (this.currentPage - 1) * this.elementsPerPage;
             var end = start + this.elementsPerPage;
-            return this.rows.slice(start, end);
+            var row = this.rows.slice(start, end)
+            if (search.length < 1) {
+                return row;
+            } else {
+                /* if (row.Cliente.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
+                     return row;
+                 }*/
+
+            }
         },
         "change_page": function change_page(page) {
             this.currentPage = page;
@@ -278,10 +286,18 @@ var vendas = new Vue({
         "num_pages": function num_pages() {
             return Math.ceil(this.rows.length / this.elementsPerPage);
         },
-        "get_rows": function get_rows() {
+        "get_rows": function get_rows(search) {
             var start = (this.currentPage - 1) * this.elementsPerPage;
             var end = start + this.elementsPerPage;
-            return this.rows.slice(start, end);
+            var row = this.rows.slice(start, end)
+            if (search.length < 1) {
+                return row;
+            } else {
+                /* if (row.Cliente.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
+                     return row;
+                 }*/
+
+            }
         },
         "change_page": function change_page(page) {
             this.currentPage = page;
@@ -337,10 +353,18 @@ var service = new Vue({
         "num_pages": function num_pages() {
             return Math.ceil(this.rows.length / this.elementsPerPage);
         },
-        "get_rows": function get_rows() {
+        "get_rows": function get_rows(search) {
             var start = (this.currentPage - 1) * this.elementsPerPage;
             var end = start + this.elementsPerPage;
-            return this.rows.slice(start, end);
+            var row = this.rows.slice(start, end)
+            if (search.length < 1) {
+                return row;
+            } else {
+                /* if (row.Cliente.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
+                     return row;
+                 }*/
+
+            }
         },
         "change_page": function change_page(page) {
             this.currentPage = page;
@@ -396,10 +420,18 @@ var product = new Vue({
         "num_pages": function num_pages() {
             return Math.ceil(this.rows.length / this.elementsPerPage);
         },
-        "get_rows": function get_rows() {
+        "get_rows": function get_rows(search) {
             var start = (this.currentPage - 1) * this.elementsPerPage;
             var end = start + this.elementsPerPage;
-            return this.rows.slice(start, end);
+            var row = this.rows.slice(start, end)
+            if (search.length < 1) {
+                return row;
+            } else {
+                /* if (row.Cliente.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
+                     return row;
+                 }*/
+
+            }
         },
         "change_page": function change_page(page) {
             this.currentPage = page;
