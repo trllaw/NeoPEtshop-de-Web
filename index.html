@@ -126,12 +126,12 @@
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
                             <!--AQUI-->
-                            <button @click="getProductsByTag('destaque')">teste</button>
+                            <button @click="getProductsByTag()">teste</button>
 
-                            <li v-for="dest in Destaques[0]" class="list-group-item">
-                                <img :src="dest.image" class="prod-image">
-                                <span>{{ dest.title}}</span>
-                                <span>{{ dest.price}}</span>
+                            <li v-for="prod in Produtos[0]" class="list-group-item">
+                                <img :src="prod.image" class="prod-image">
+                                <span>{{ prod.title}}</span>
+                                <span>{{ prod.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -342,11 +342,11 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="index_script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index_script.js"></script>
 </body>
 
 </html>

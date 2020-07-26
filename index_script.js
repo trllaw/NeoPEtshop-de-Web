@@ -6,7 +6,7 @@
 
 /*Vue para a pagina inicial(Home/Index) */
 var home = new Vue({
-    el: '#Loja',
+    el: '#app',
     data: {
         Produtos:[],
         user: {
@@ -16,11 +16,6 @@ var home = new Vue({
             phone: ""
         },
         tags: ["destaque", "racao", "petisco", "acessorios", "higiene", "farmacia"]
-    },
-    created: {
-        function(){
-        this.getProductsByTag();
-        }
     },
     methods: {
         async getProductsByTag() {
@@ -54,7 +49,6 @@ var home = new Vue({
                 })
                 .catch(function(error) {
                     console.log(error);
-                    console.log(error.response);
                     alert(error.response.data.error);
                     let res = error.response.data.id;
                     return res;

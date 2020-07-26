@@ -5,9 +5,7 @@ const User  = mongoose.model('User');
 
 exports.get = (req, res, next) => {
     User
-        .find({
-            active: true 
-        }, 'name email roles')
+        .find()
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
@@ -16,19 +14,19 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-    if(User.findOne({username: req.body.username}) != null ||
-    User.findOne({email: req.body.email}) != null ){
-        var User = new User(req.body);
-        User
+    /*if(User.findOne({username: req.body.username}) != null ||
+    User.findOne({email: req.body.email}) != null ){*/
+        var user = new User(req.body);
+        user
             .save()
             .then(x => {
                 res.status(201).send({message: 'Usuario cadastrado com sucesso!'});
             }).catch(e => {
                 res.status(400).send({message: 'Falha ao cadastrar Usuario', data: e});
             });
-    }else {
-        res.status(400).send({message: 'Falha ao cadastrar Usuario', data: e});
-    }
+    /*}else {
+        res.status(400).send({message: 'Usuario ou email ja existente', data: e});
+    }*/
 };
 
 exports.authenticate = (req, res, next) => {
@@ -65,7 +63,7 @@ exports.put = (req, res, next) => {
 
 exports.delete = (req, res, next) => {
     User
-        .findOneAndRemove(req.body.id)
+        .findOneAndRemove(req.params.id)
         .then(x => {
             res.status(200).send({message: 'Usuario removido com sucesso!'});
         }).catch(e => {
