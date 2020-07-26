@@ -126,8 +126,6 @@
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
                             <!--AQUI-->
-                            <button @click="getProductsByTag()">teste</button>
-
                             <li v-for="prod in Produtos[0]" class="list-group-item">
                                 <img :src="prod.image" class="prod-image">
                                 <span>{{ prod.title}}</span>

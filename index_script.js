@@ -62,6 +62,13 @@ var home = new Vue({
                 .then(function(response) {
                     if(response.data.data != null) {
                         alert("success");
+                        if(response.data.data.roles[0] == "admin"){
+                            window.location.href = "./adm/AdmPage.html"
+                        }
+                        else{
+                            window.location.href = "./user/userPageHome.html"
+                        }
+
                         return response.data.id;
                     }
                     else {
@@ -81,7 +88,7 @@ var home = new Vue({
 
 
 document.getElementById("cadastro").addEventListener('click', home.createUser);
-
+document.addEventListener('load', home.getProductsByTag())
 /*Vue para a pagina do Adm 
 ---------------- Tabelas --------------------------
 -- rows =  Possui arrays com os dados relevantes a sessão que está sendo implementada
