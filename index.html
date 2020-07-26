@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -124,12 +125,13 @@
                     <div class="box-container ">
                         <h2 style="color: #A95534;font-weight: bold">Destaques e Promoções</h2>
                         <ul class="list-group list-group-horizontal">
-                            <button @click="getProductsByTag()">teste</button>
-                            <button @click="verifyUser()">Login</button>
-                            <li v-for="prod in Produtos[0]" class="list-group-item">
-                                <img :src="prod.image" class="prod-image">
-                                <span>{{ prod.title}}</span>
-                                <span>{{ prod.price}}</span>
+                            <!--AQUI-->
+                            <button @click="getProductsByTag('destaque')">teste</button>
+
+                            <li v-for="dest in Destaques[0]" class="list-group-item">
+                                <img :src="dest.image" class="prod-image">
+                                <span>{{ dest.title}}</span>
+                                <span>{{ dest.price}}</span>
                                 <button>adicionar ao carrinho</button>
                             </li>
                         </ul>
@@ -322,29 +324,29 @@
                                     <div class="textBox"><b>Senha: </b> </div>
                                     <input type="password" class="form-control" placeholder="********" v-model="user.password">
                                 </li>
-                                <li><input type="checkbox">
+                                <li>
+                                    <input type="checkbox">
                                     <div>Receber emails com as ultimas novidades da nossa loja.</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn" @click="createUser()">Efetuar cadastro</button>
+                        <button type="submit" class="btn " id="cadastro">Efetuar cadastro</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </body>
 
 </html>

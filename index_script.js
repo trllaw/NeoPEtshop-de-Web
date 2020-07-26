@@ -86,6 +86,7 @@ var home = new Vue({
 });
 
 
+document.getElementById("cadastro").addEventListener('click', home.createUser);
 
 /*Vue para a pagina do Adm */
 
