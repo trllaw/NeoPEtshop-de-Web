@@ -330,22 +330,22 @@
                             <li class="list-group-item ">
                                 <h3>Banho</h3>
                                 <p>Banho Completo para seu animalzinho ficar lindo e cheiroso. A partir de R$40</p>
-                                <button>agendar</button>
+                                <a href="#" data-toggle="modal" data-target="#banhoModal"><button>agendar</button></a>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Tosa</h3>
                                 <p>Tosa completa e estilização dos pelos do seu pet. A partir de R$40</p>
-                                <button>agendar</button>
+                                <a href="#" data-toggle="modal" data-target="#tosaModal"> <button>agendar</button></a>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Vacinação</h3>
                                 <p>Aplicação de diversas vacinas. Preço varia de acordo com a dose e tipo da vacina, consulte nossos especialistas</p>
-                                <button>agendar</button>
+                                <a href="#" data-toggle="modal" data-target="#vacModal"> <button>agendar</button></a>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Consultas</h3>
                                 <p>Consulta para seu pet com um de nossos veterinários especializados. A partir de R$100</p>
-                                <button>agendar</button>
+                                <a href="#" data-toggle="modal" data-target="#consModal"><button>agendar</button></a>
                             </li>
                         </ul>
                     </div>
@@ -614,8 +614,8 @@
                                     <div class="textBox"><b>Email: </b> </div>
                                     <input type="text" placeholder="user@email.com">
                                 </li>
-                                <li><input type="checkbox">
-                                    <div>Receber emails com as ultimas novidades da nossa loja.</div>
+                                <li>
+                                    <div><input type="checkbox"> Receber emails com as ultimas novidades da nossa loja.</div>
                                 </li>
                             </ul>
                         </div>
@@ -627,11 +627,195 @@
             </div>
         </div>
 
+        <!--agendar serviço: banho-->
+
+        <div class="modal fade" id="banhoModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agendar Banho</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <label for="pets">Pet:</label>
+                                <select name="pets" id="pets">
+                                  <option value="gato">gato - R$ 40,00</option>
+                                  <option value="cachorro">cachorro - R$ 50,00</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Nome do Pet: </b> </div>
+                                <input type="text" placeholder="nome">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>data: </b> </div>
+                                <input type="date">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--agendar serviço: Tosa-->
+
+        <div class="modal fade" id="tosaModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agendar Tosa</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <label for="pets">Pet:</label>
+                                <select name="pets" id="pets">
+                                  <option value="gato">gato - R$ 50,00</option>
+                                  <option value="cachorro">cachorro - R$ 40,00</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Nome do Pet: </b> </div>
+                                <input type="text" placeholder="nome">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>data: </b> </div>
+                                <input type="date">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--agendar serviço: Vacina-->
+
+        <div class="modal fade" id="vacModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agendar Vacinação</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <label for="pets">Vacina:</label>
+                                <select name="pets" id="pets">
+                                  <option value="gato">Raiva (felina) - R$ 50,00</option>
+                                  <option value="cachorro">Raiva (canina) - R$ 40,00</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Nome do Pet: </b> </div>
+                                <input type="text" placeholder="nome">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>data: </b> </div>
+                                <input type="date">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--agendar serviço: consulta-->
+        <div class="modal fade" id="consModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agendar consulta</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <label for="pets">Pet:</label>
+                                <select name="pets" id="pets">
+                                  <option value="gato">gato - R$ 100,00</option>
+                                  <option value="cachorro">cachorro - R$ 110,00</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Nome do Pet: </b> </div>
+                                <input type="text" placeholder="nome">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>data: </b> </div>
+                                <input type="date">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Carrinho-->
+        <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agendar consulta</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <label for="pets">Pet:</label>
+                                <select name="pets" id="pets">
+                                  <option value="gato">gato - R$ 100,00</option>
+                                  <option value="cachorro">cachorro - R$ 110,00</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Nome do Pet: </b> </div>
+                                <input type="text" placeholder="nome">
+                            </li>
+                            <li>
+                                <div class="textBox"><b>Total: </b> R$150,00</div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Finalizar compra</button>
+                        <button type="button" class="btn"> Cancelar compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
