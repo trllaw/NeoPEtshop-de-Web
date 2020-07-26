@@ -5,9 +5,19 @@ const Pet  = mongoose.model('Pet');
 
 exports.get = (req, res, next) => {
     Pet
+        .find()
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send(e);
+        });
+};
+
+exports.getByOwnerId = (req, res, next) => {
+    Pet
         .find({
-            active: true 
-        }, 'name species race owner')
+            owner: req.body.id
+        })
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
@@ -16,8 +26,8 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-    var Pet = new Pet(req.body);
-    Pet
+    var pet = new Pet(req.body);
+    pet
         .save()
         .then(x => {
             res.status(201).send({message: 'Animal cadastrado com sucesso!'});

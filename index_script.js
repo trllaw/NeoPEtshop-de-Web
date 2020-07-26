@@ -4,91 +4,6 @@
 	Nome: Vinicius Ricardo Carvalho		NUSP: 10724413
 */
 
-//--------------Vue para a pagina inicial(Home/Index)--------- */
-var home = new Vue({
-    el: '#app',
-    data: {
-        Produtos:[],
-        user: {
-            username: "",
-            email: "",
-            password: "",
-            phone: ""
-        },
-        tags: ["destaque", "racao", "petisco", "acessorios", "higiene", "farmacia"]
-    },
-    methods: {
-        async getProductsByTag() {
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            let res = this.Produtos;
-            for(i in this.tags){
-                await axios.get('http://localhost:3000/products/tags/'+ this.tags[i])
-                    .then(function(response) {
-                        console.log(response.data)
-                        res.push(response.data);
-                        
-                    })
-                    .catch(function(error) {
-                        console.log("deu ruim");
-                        console.log(error);
-                        console.log(error.response);
-                    });
-            }
-        },
-
-        async createUser() {
-            console.log(this.user);
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            return await axios.post('http://localhost:3000/users', this.user)
-                .then(function(response) {
-                    //console.log(response);
-                    //console.log(response.data);
-                    alert("success");
-                    return response.data.id;
-
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    alert(error.response.data.error);
-                    let res = error.response.data.id;
-                    return res;
-                });
-        },
-
-        async verifyUser() {
-            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-            console.log("verificando login")
-            return await axios.post('http://localhost:3000/users/auth', this.user)
-                .then(function(response) {
-                    if(response.data.data != null) {
-                        alert("success");
-                        if(response.data.data.roles[0] == "admin"){
-                            window.location.href = "./adm/AdmPage.html"
-                        }
-                        else{
-                            window.location.href = "./user/userPageHome.html"
-                        }
-
-                        return response.data.id;
-                    }
-                    else {
-                        alert("usuario ou senha invalidos");
-                    }
-                })
-                .catch(function(error) {
-                    console.log("error");
-                    //console.log(error.response);
-                    alert(error.response.data.error);
-                    let res = error.response.data.id;
-                    return res;
-                });
-        }
-    }
-});
-
-
-document.getElementById("cadastro").addEventListener('click', home.createUser);
-document.addEventListener('load', home.getProductsByTag())
 /*Vue para a pagina do Adm 
 ---------------- Tabelas --------------------------
 -- rows =  Possui arrays com os dados relevantes a sessão que está sendo implementada
@@ -503,3 +418,116 @@ function consultar(id) {
         document.getElementById("consulta").style.display = "block";
     }
 }
+
+
+//--------------Vue para a pagina inicial(Home/Index)--------- */
+var home = new Vue({
+    el: '#app',
+    data: {
+        Produtos:[],
+        UserMode: false,
+        user: {
+            username: "",
+            email: "",
+            password: "",
+            phone: "",
+            id: ""
+        },
+        tags: ["destaque", "racao", "petisco", "acessorios", "higiene", "farmacia"],
+        Pets: []
+
+    },
+    methods: {
+        async getProductsByTag() {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            let res = this.Produtos;
+            for(i in this.tags){
+                await axios.get('http://localhost:3000/products/tags/'+ this.tags[i])
+                    .then(function(response) {
+                        //console.log(response.data)
+                        res.push(response.data);
+                        
+                    })
+                    .catch(function(error) {
+                        console.log("deu ruim");
+                        console.log(error);
+                        console.log(error.response);
+                    });
+            }
+        },
+
+        async createUser() {
+            console.log(this.user);
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            return await axios.post('http://localhost:3000/users', this.user)
+                .then(function(response) {
+                    //console.log(response);
+                    //console.log(response.data);
+                    alert("success");
+                    return response.data.id;
+
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    alert(error.response.data.error);
+                    let res = error.response.data.id;
+                    return res;
+                });
+        },
+
+        async verifyUser() {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            console.log("verificando login")
+            return await axios.post('http://localhost:3000/users/auth', this.user)
+                .then(function(response) {
+                    if(response.data.data != null) {
+                        alert("success");
+                        home.user.id = response.data.data._id;
+                        if(response.data.data.roles[0] == "admin"){
+                            window.location.href = "./adm/AdmPage.html"
+                        }
+                        else{
+                            home.UserMode = true; 
+                            home.loadUserData();               
+                        }
+
+                        return response.data.id;
+                    }
+                    else {
+                        alert("usuario ou senha invalidos");
+                    }
+                })
+                .catch(function(error) {
+                    console.log("catched error on verify user");
+                    console.log(error);
+                    //alert(error.response.data.error);
+                    //let res = error.response.data.id;
+                    //return res;
+                });
+        },
+        async loadUserData() {
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            let res = this.Pets;
+            console.log(home.user.id)
+            await axios.post('http://localhost:3000/pets/owner', home.user)
+                .then(function(response) {
+                    console.log(response.data[0])
+                    res.push(response.data);
+                    
+                })
+                .catch(function(error) {
+                    console.log("deu ruim");
+                    console.log(error);
+                    console.log(error.response);
+                });
+        },
+        
+        changeUserMode(){
+            home.UserMode = !home.UserMode;
+        }
+    }
+});
+
+
+document.getElementById("cadastro").addEventListener('click', home.createUser);
+document.addEventListener('load', home.getProductsByTag());

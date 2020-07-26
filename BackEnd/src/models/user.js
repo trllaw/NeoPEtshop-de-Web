@@ -31,18 +31,6 @@ const schema = new Schema({
         required: true,
         enum: ['user', 'admin'],
         default: 'user'
-    }],
-    pets: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Pet'
-    }],
-    serviceHist: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ServiceOrder'
-    }],
-    shopHist: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ProductOrder'
     }]
 });
 

@@ -19,11 +19,7 @@ const schema = new Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    },
-    serviceHist: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ServiceOrder'
-    }]
+    }
 });
 
 module.exports = mongoose.model('Pet', schema);

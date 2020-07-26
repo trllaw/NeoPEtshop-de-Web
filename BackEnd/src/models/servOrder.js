@@ -37,7 +37,7 @@ const schema = new Schema({
             type: Number,
             required: true
         },
-        product: {
+        service: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Service'
         }

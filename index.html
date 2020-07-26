@@ -32,11 +32,16 @@
                     <input type="text" placeholder="Busque aqui!">
                     <button>Buscar</button>
                 </div>
-                <div class="loginBox">
+                <div class="loginBox" v-if=!UserMode>
                     <input type="text" placeholder="usuario" v-model="user.username">
                     <input type="password" placeholder="senha" v-model="user.password">
                     <button @click="verifyUser()">Login</button>
-                    <a href="#" data-toggle="modal" data-target="#userModal"><button>Criar Conta</button></a>
+                    <a href="#" data-toggle="modal" data-target="#newuserModal"><button>Criar Conta</button></a>
+                </div>
+                <div class="loginBox" v-if=UserMode>
+                    <h3>Seja bem vindo(a)</h3>
+                    <label>{{user.username}}</label>
+                    <button @click="changeUserMode()">Sair</button>
                 </div>
             </div>
         </div>
@@ -55,6 +60,22 @@
                     <li class="nav-item">
                         <a class="nav-link" style="color: #A95534;" href="#Servicos">Serviços</a>
                     </li>
+
+                    <!--User only-->
+                    <li class="nav-item" v-if=UserMode>
+                        <a class="nav-link" style="color: #A95534;" href="#MeusPets">Meus Pets</a>
+                    </li>
+                    <li class="nav-item" v-if=UserMode>
+                        <a class="nav-link" style="color: #A95534;" href="#UltimasCompras">Ultimas Compras</a>
+                    </li>
+                    <li class="nav-item" v-if=UserMode>
+                        <a class="nav-link" style="color: #A95534;" href="#UltimosServiços">Ultimos Serviços</a>
+                    </li>
+                    <li class="nav-item" v-if=UserMode>
+                        <a class="nav-link" style="color: #A95534;" href="#" data-toggle="modal" data-target="#userModal">Área de Usuario</a>
+                    </li>
+                    <!--User only-->
+
                     <li class="nav-item">
                         <a class="nav-link" style="color: #A95534;" href="#Sobre">Sobre</a>
                     </li>
@@ -217,25 +238,136 @@
                             <li class="list-group-item ">
                                 <h3>Banho</h3>
                                 <p>Banho Completo para seu animalzinho ficar lindo e cheiroso. A partir de R$40</p>
-
+                                <button v-if=UserMode>agendar</button>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Tosa</h3>
                                 <p>Tosa completa e estilização dos pelos do seu pet. A partir de R$40</p>
+                                <button v-if=UserMode>agendar</button>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Vacinação</h3>
                                 <p>Aplicação de diversas vacinas. Preço varia de acordo com a dose e tipo da vacina, consulte nossos especialistas</p>
+                                <button v-if=UserMode>agendar</button>
                             </li>
                             <li class="list-group-item ">
                                 <h3>Consultas</h3>
                                 <p>Consulta para seu pet com um de nossos veterinários especializados. A partir de R$100</p>
+                                <button v-if=UserMode>agendar</button>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
+        <!--User only comeco-->
+
+        <!--Meus Pets-->
+        <section id="MeusPets" v-if=UserMode>
+            <div class="conteiner-fluid">
+                <h1>Meus Pets</h1>
+                <div class="box-container">
+                    <div class="container-fluid">
+                        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
+                            <li v-for="pet in Pets[0]" class="list-group-item">                           
+                                <div class="col-sm-3 col-lg-2 col-5 ">
+                                    <div>
+                                        <img src="./imgs/crycat.jpg" class="prod-image">
+                                        <div>
+                                            <span><b>Nome:</b> {{ pet.name}}</span>
+                                            <span><b>Pet:</b>{{ pet.species}}</span>
+                                            <span><b>Raça:</b>{{ pet.race}}</span>
+                                            <a href="#" data-toggle="modal" data-target="#petModal"><button>Mais detalhes</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <a href="#" data-toggle="modal" data-target="#newPetModal"><button type="button">Adicionar um novo pet</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Ultimas compras-->
+        <section id="UltimasCompras" v-if=UserMode>
+            <div class="conteiner-fluid">
+                <h1>Utimas compras</h1>
+                <div class="box-container">
+                    <div class="container-fluid">
+                        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <img src="https://picsum.photos/150/150 " class="img-thumbnail card-img-top">
+                                    <div class="card-body">
+                                        <p class="prodName "><b>Nome:</b> Produto 1</p>
+                                        <p class="priceTag "><b>preço:</b> R$50,00</p>
+                                        <p><b>Quantia:</b> 3 unidades</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <img src="https://picsum.photos/150/150 " class="img-thumbnail card-img-top">
+                                    <div class="card-body">
+                                        <p class="prodName "><b>Nome:</b> Produto 1</p>
+                                        <p class="priceTag "><b>preço:</b> R$50,00</p>
+                                        <p><b>Quantia:</b> 3 unidades</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Ultimos serviços-->
+        <section id="UltimosServiços" v-if=UserMode>
+            <div class="conteiner-fluid">
+                <h1>Ultimos Serviços</h1>
+                <div class="box-container">
+                    <div class="container-fluid">
+                        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <p><b>Serviço:</b> Vacina p/ Raiva</p>
+                                        <p><b>Preço:</b> R$50,00</p>
+                                        <p><b>Pet</b> Catto</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-lg-2 col-5 ">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <p><b>Serviço:</b> Banho (cachorro)</p>
+                                        <p><b>Preço:</b> R$50,00</p>
+                                        <p><b>Pet</b> Dogge</p>
+                                        <p><b>Data:</b>06/05/20</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--User only fim-->
+
+
+
+
         <!--Sobre-->
         <section id="Sobre">
             <div class="containeir-fluid">
@@ -279,9 +411,11 @@
         <!--fim rodape-->
 
 
+
+
         <!--Modal-->
         <!--cadastro do usuario-->
-        <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+        <div class="modal fade" id="newuserModal" tabindex="-1" role="dialog">
             <div class=" modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -318,6 +452,130 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn " id="cadastro">Efetuar cadastro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--dados do pet-->
+        <div class="modal fade" id="petModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Meus Pets</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <img src="../imgs/doggo.jpeg" class="img-thumbnail" alt="pet image">
+                            <ul>
+                                <li><b>Nome:</b>
+                                    <input type="text" placeholder="Dogge">
+                                </li>
+                                <li><b>Pet:</b>
+                                    <input type="text" placeholder="cachorro">
+                                </li>
+                                <li><b>Raça: </b>
+                                    <input type="text" placeholder="Shiba">
+                                </li>
+                                <li><b>Ultima Vacina: </b>
+                                    <span>Raiva(20/07/2019)</span>
+                                </li>
+                                <li><b>Ultima Tosa: </b>
+                                    <span>13/10/2019</span>
+                                </li>
+                                <li><b>Ultimo Banho:</b>
+                                    <span>27/02/2020</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Atualizar</button>
+                        <button type="button" class="btn"> Remover</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--novo pet-->
+        <div class="modal fade" id="newPetModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Novo Pet</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <ul>
+                                <li><b>Nome:</b>
+                                    <input type="text" placeholder="nome do pet">
+                                </li>
+                                <li><b>Pet:</b>
+                                    <input type="text" placeholder="pet">
+                                </li>
+                                <li><b>Raça: </b>
+                                    <input type="text" placeholder="raça">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--dados do usuario-->
+        <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+            <div class=" modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        <span>x</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="user-data">
+                            <ul>
+                                <li>
+                                    <div class="textBox"><span><b>Nome: </b> Usuario X</span> </div>
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>CPF: </b> </div>
+                                    <input type="text" placeholder="123.456.789.01">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Telefone: </b> </div>
+                                    <input type="text" placeholder="(11)1111-1111">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Celular: </b> </div>
+                                    <input type="text" placeholder="(22)92222-2222">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Endereço: </b> </div>
+                                    <input type="text" placeholder="Endereço do Usuario">
+                                </li>
+                                <li>
+                                    <div class="textBox"><b>Email: </b> </div>
+                                    <input type="text" placeholder="user@email.com">
+                                </li>
+                                <li><input type="checkbox">
+                                    <div>Receber emails com as ultimas novidades da nossa loja.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"> Atualizar Dados</button>
                     </div>
                 </div>
             </div>

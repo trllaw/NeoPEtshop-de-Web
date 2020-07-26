@@ -18,12 +18,11 @@ const schema = new Schema({
     },
     description: {
         type: String,
-        required: true
+        required: [true, 'A descrição é obrigatório'],
     },
     price: {
-        type: Number,
-        min: [0.01, 'Preco precisa ser maior que zero'],
-        required: true
+        type: String,
+        required: [true, 'O preço é obrigatório'],
     },
     active: {
         type: Boolean,
