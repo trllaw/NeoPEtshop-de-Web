@@ -1,0 +1,31 @@
+{ 
+    "_id" : ObjectId("5efc9cb9700be6192a3db4e3"), 
+    "hours" : [
+        "10", 
+        "11", 
+        "14", 
+        "15", 
+        "16"
+    ], 
+    "title" : "Tosa radical", 
+    "slug" : "tosa-radical", 
+    "description" : "Tosa bem curta", 
+    "partner" : "Luis Braga", 
+    "price" : 120.45, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5efca2d78234d41e555ea78d"), 
+    "hours" : [
+        "9", 
+        "11", 
+        "15", 
+        "17"
+    ], 
+    "title" : "Banho relaxante", 
+    "slug" : "banho-relaxante", 
+    "description" : "Banho quente demorado", 
+    "partner" : "José Braga Silva", 
+    "price" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}

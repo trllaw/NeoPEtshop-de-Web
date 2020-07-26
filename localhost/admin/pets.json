@@ -1,0 +1,19 @@
+{ 
+    "_id" : ObjectId("5f1de01355ea3d40a8077380"), 
+    "serviceHist" : [
+
+    ], 
+    "name" : "Jack", 
+    "species" : "gato", 
+    "race" : "vacilao", 
+    "owner" : ObjectId("5f1d69db35b7c11a209d9744"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dedc15b3e6b471e89935d"), 
+    "name" : "Nina", 
+    "species" : "cachorro", 
+    "race" : "boladona", 
+    "owner" : ObjectId("5f1d69db35b7c11a209d9744"), 
+    "__v" : NumberInt(0)
+}

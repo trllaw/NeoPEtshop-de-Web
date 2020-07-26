@@ -1,0 +1,279 @@
+{ 
+    "_id" : ObjectId("5f1df3ef22881e4b9fb45731"), 
+    "active" : true, 
+    "tags" : [
+        "petisco", 
+        "cachorro", 
+        "destaque"
+    ], 
+    "title" : "Snack Petz Cordeiro", 
+    "slug" : "snack-cordeiro", 
+    "description" : "Snack Petz Cordeiro , Linhaça e Óleo de Coco para Cães", 
+    "price" : "R$ 4,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1580134920706.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df49b22881e4b9fb45732"), 
+    "active" : true, 
+    "tags" : [
+        "petisco", 
+        "gato", 
+        "frango"
+    ], 
+    "title" : "Petisco Friskies Sabor Frango", 
+    "slug" : "snack-frango", 
+    "description" : "Petisco Friskies Sabor Frango para gatos", 
+    "price" : "R$ 4,59", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1488888616919.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df4e722881e4b9fb45733"), 
+    "active" : true, 
+    "tags" : [
+        "petisco", 
+        "cachorro", 
+        "linguicinha"
+    ], 
+    "title" : "Petisco Doguitos", 
+    "slug" : "doguitos", 
+    "description" : "Petisco Doguitos Rodízio para Cães Adultos e Filhotes Sabor Linguicinha - 45g", 
+    "price" : "R$ 4,69", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/10003280000148-1.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df54d22881e4b9fb45734"), 
+    "active" : true, 
+    "tags" : [
+        "sanitario", 
+        "cachorro"
+    ], 
+    "title" : "Sanitário para Cachorro", 
+    "slug" : "sanitario-dog", 
+    "description" : "Sanitário para Cachorro Dog Toalete Grande Azul - Furacão Pet", 
+    "price" : "R$ 37,79", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1496927268737.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df58a22881e4b9fb45735"), 
+    "active" : true, 
+    "tags" : [
+        "sanitario", 
+        "gato", 
+        "areia"
+    ], 
+    "title" : "Pipicat 12 kg", 
+    "slug" : "areia-pipi", 
+    "description" : "Pipicat 12 kg - Areia Higiênica Multicat para Gatos", 
+    "price" : "R$ 28,90", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1443662047146.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df69522881e4b9fb45739"), 
+    "active" : true, 
+    "tags" : [
+        "sanitario", 
+        "gato", 
+        "areia", 
+        "higiene"
+    ], 
+    "title" : "Areia Higiênica Pipicat", 
+    "slug" : "areia-pipicat", 
+    "description" : "Pipicat 12 kg Areia Higiênica Multicat para Gatos", 
+    "price" : "R$ 28,90", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1443662047146.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df6db22881e4b9fb4573a"), 
+    "active" : true, 
+    "tags" : [
+        "racao", 
+        "cachorro"
+    ], 
+    "title" : "Ração Golden Special Sabor Frango", 
+    "slug" : "racao-golden-frango", 
+    "description" : "Ração de 20 kg Golden Special Sabor Frango para cães adultos", 
+    "price" : "R$ 139,90", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1562338432812.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df6ec22881e4b9fb4573b"), 
+    "active" : true, 
+    "tags" : [
+        "racao", 
+        "cachorro", 
+        "raca-grande", 
+        "filhote", 
+        "destaque"
+    ], 
+    "title" : "Ração Premier Fórmula para Cães Filhotes", 
+    "slug" : "racao-premier-filhotes", 
+    "description" : "Ração Premier Fórmula para Cães Filhotes sabor frango 15kg", 
+    "price" : "R$ 187,90", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1469037348170.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df6f522881e4b9fb4573c"), 
+    "active" : true, 
+    "tags" : [
+        "racao", 
+        "gato", 
+        "filhote", 
+        "destaque"
+    ], 
+    "title" : "Ração Premier Seleção Natural Gatos Filhotes", 
+    "slug" : "racao-premier-gato", 
+    "description" : "Ração Premier Seleção Natural Gatos Filhotes  1,5kg", 
+    "price" : "R$ 62,90", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1562790171085.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df74322881e4b9fb4573e"), 
+    "active" : true, 
+    "tags" : [
+        "sanitario", 
+        "cachorro", 
+        "higiene"
+    ], 
+    "title" : "Sanitário para Cachorros", 
+    "slug" : "sanitario-dogg", 
+    "description" : "Sanitário para Cachorro Dog Toalete Grande Azul - Furacão Pet", 
+    "price" : "R$ 37,79", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1496927268737.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1df79922881e4b9fb4573f"), 
+    "active" : true, 
+    "tags" : [
+        "gato", 
+        "cachorro", 
+        "higiene", 
+        "dental"
+    ], 
+    "title" : "Dedeira Dental Western", 
+    "slug" : "dedeira-dental", 
+    "description" : "Dedeira Dental Western caes e gatos", 
+    "price" : "R$ 15,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1507237399183.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dfa0222881e4b9fb45740"), 
+    "active" : true, 
+    "tags" : [
+        "gato", 
+        "cachorro", 
+        "acessorios", 
+        "bebedouro", 
+        "destaque"
+    ], 
+    "title" : "Fonte Bebedouro", 
+    "slug" : "Fonte-Bebedouro", 
+    "description" : "Fonte Bebedouro Furacão Pet para Cães e Gatos Azul", 
+    "price" : "R$ 199,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1506950055232.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dfa5322881e4b9fb45741"), 
+    "active" : true, 
+    "tags" : [
+        "cachorro", 
+        "acessorios", 
+        "coleira"
+    ], 
+    "title" : "Coleira Peitoral Coroa para Cães", 
+    "slug" : "coleira-peitoral", 
+    "description" : "Peitoral Petz Coroa para Cães", 
+    "price" : "R$ 69,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1573756308531.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dface22881e4b9fb45742"), 
+    "active" : true, 
+    "tags" : [
+        "cachorro", 
+        "acessorios", 
+        "macaco"
+    ], 
+    "title" : "Macaco Pelúcia Marrom", 
+    "slug" : "macaco", 
+    "description" : "Macaco Chalesco Brinquedo Para Cães Pelúcia Marrom", 
+    "price" : "R$ 29,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1531491431642.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dfba622881e4b9fb45743"), 
+    "active" : true, 
+    "tags" : [
+        "cachorro", 
+        "farmacia", 
+        "colar"
+    ], 
+    "title" : "Colar Elizabetano", 
+    "slug" : "colar-eliz", 
+    "description" : "Colar Elizabetano de Tecido Pet Med Cães e Gatos Conforto Vermelho e Preto", 
+    "price" : "R$ 61,99", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1448657871462.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dfc1022881e4b9fb45744"), 
+    "active" : true, 
+    "tags" : [
+        "cachorro", 
+        "farmacia", 
+        "shampoo", 
+        "gato", 
+        "destaque"
+    ], 
+    "title" : "Shampoo Virbac Peroxydex", 
+    "slug" : "shampoo-virbac", 
+    "description" : "Shampoo Dermatológico Virbac Peroxydex Spherulites para Cães e Gatos", 
+    "price" : "R$ 315,50", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/10007230000068-1.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1dfc5122881e4b9fb45745"), 
+    "active" : true, 
+    "tags" : [
+        "cachorro", 
+        "farmacia", 
+        "antipulga"
+    ], 
+    "title" : "Antipulgas Cães de 20Kg a 40Kg", 
+    "slug" : "antipulgas-bravecto", 
+    "description" : "Antipulgas e Carrapatos Bravecto MSD para Cães de 20Kg a 40Kg", 
+    "price" : "R$ 234,50", 
+    "quantity" : NumberInt(1), 
+    "image" : "https://staticpetz.stoom.com.br/fotos/1575296905843.jpg", 
+    "__v" : NumberInt(0)
+}

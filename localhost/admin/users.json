@@ -1,0 +1,42 @@
+{ 
+    "_id" : ObjectId("5f1d69ac35b7c11a209d9743"), 
+    "roles" : [
+        "admin"
+    ], 
+    "pets" : [
+
+    ], 
+    "serviceHist" : [
+
+    ], 
+    "shopHist" : [
+
+    ], 
+    "username" : "admin", 
+    "email" : "admin@admin.com", 
+    "password" : "admin", 
+    "cpf" : "", 
+    "phone" : "12991234567", 
+    "address" : "", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1d69db35b7c11a209d9744"), 
+    "roles" : [
+
+    ], 
+    "pets" : [
+
+    ], 
+    "serviceHist" : [
+
+    ], 
+    "shopHist" : [
+
+    ], 
+    "username" : "asdf", 
+    "email" : "asdf@av.vc", 
+    "password" : "123456", 
+    "phone" : "452736", 
+    "__v" : NumberInt(0)
+}
